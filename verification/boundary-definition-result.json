@@ -1,0 +1,21 @@
+{
+  "id": "424c99d8-e3bb-4c5d-84d7-fa7aa1012915",
+  "kind": "definition",
+  "theorem_name": "AngelDevil_SquareBoundary",
+  "theorem_title": "Side-connected integer squares and their unit boundary",
+  "formal_statement": "",
+  "natural_language_statement": "Squares are indexed by integer pairs. The four side neighbors differ by one in exactly one coordinate. A finite set is connected when it is nonempty and any two members can be joined by a finite sequence of side-neighbor steps within the set. Each exposed side is a direction from an occupied square to an unoccupied neighbor. The perimeter counts all such sides, including hole boundaries. The wall set records the occupied square and side direction.",
+  "definitions": "import Definitions.Def_AngelDevil_Game\nimport Mathlib.Algebra.Order.BigOperators.Group.Finset\nimport Mathlib.Data.Fintype.Prod\n\nnamespace AngelDevil\n\n/-- Four oriented sides of an integer unit square. -/\nabbrev SquareSide := Bool \u00d7 Bool\n\ndef sideNeighbor (v : Point) (d : SquareSide) : Point :=\n  if d.1 then (v.1, v.2 + if d.2 then -1 else 1)\n  else (v.1 + if d.2 then -1 else 1, v.2)\n\ndef oppositeSide (d : SquareSide) : SquareSide := (d.1, !d.2)\n\ndef SquareAdjacent (u v : Point) : Prop := \u2203 d, sideNeighbor u d = v\n\ndef exposedSides (s : Finset Point) (v : Point) : Finset SquareSide :=\n  Finset.univ.filter (fun d => sideNeighbor v d \u2209 s)\n\n/-- Number of unit boundary sides, including sides surrounding holes. -/\ndef squarePerimeter (s : Finset Point) : Nat :=\n  \u2211 v \u2208 s, (exposedSides s v).card\n\ndef SquaresConnected (s : Finset Point) : Prop :=\n  s.Nonempty \u2227 \u2200 a \u2208 s, \u2200 b \u2208 s,\n    Relation.ReflTransGen (fun u v => u \u2208 s \u2227 v \u2208 s \u2227 SquareAdjacent u v) a b\n\n/-- A wall records its occupied square and the direction of its empty neighbor. -/\ndef boundaryWalls (s : Finset Point) : Finset (Point \u00d7 SquareSide) :=\n  s.biUnion (fun v => (exposedSides s v).image (fun d => (v, d)))\n\nend AngelDevil\n",
+  "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 6, Definition 4.1 and Claim 4.2.",
+  "tags": [
+    "combinatorics",
+    "game-theory",
+    "angel-problem"
+  ],
+  "visibility": "public",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "4391822a-6fe3-4195-bbb4-f998a5562061",
+  "created_at": "2026-10-18T13:52:20.781871+00:00",
+  "updated_at": "2026-10-18T13:52:28.248408+00:00"
+}

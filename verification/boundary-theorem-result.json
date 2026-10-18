@@ -1,0 +1,21 @@
+{
+  "id": "a9e8b05d-7e06-453a-8bb1-31dff0321393",
+  "kind": "problem",
+  "theorem_name": "AngelDevil.connectedSquares_perimeter",
+  "theorem_title": "Claim 4.2: boundary bound for connected squares",
+  "formal_statement": "theorem AngelDevil.connectedSquares_perimeter {s : Finset AngelDevil.Point} (h : AngelDevil.SquaresConnected s) : AngelDevil.squarePerimeter s \u2264 2 * s.card + 2 := by sorry",
+  "natural_language_statement": "Let $S$ be a finite nonempty set of integer unit squares, connected by shared sides, and let $P(S)$ count all unit boundary sides, including boundaries of holes. Then\n\n$$P(S) \\le 2|S|+2.$$\n\nThis is the connected-square perimeter estimate used in the wall-counting argument for the Angel strategy.",
+  "definitions": "import Definitions.Def_AngelDevil_SquareBoundary",
+  "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 6, Definition 4.1 and Claim 4.2.",
+  "tags": [
+    "combinatorics",
+    "game-theory",
+    "angel-problem"
+  ],
+  "visibility": "public",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "595569d4-9682-4a6c-9967-8e47f242c4c0",
+  "created_at": "2026-10-18T13:53:07.729308+00:00",
+  "updated_at": "2026-10-18T13:53:17.930597+00:00"
+}

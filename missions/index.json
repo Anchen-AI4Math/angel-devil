@@ -8,7 +8,7 @@
       "mission_id": null,
       "proposal_status": "In review",
       "research_status": "formalization-in-progress",
-      "verification_status": "74 local theorems checked; original Theorem 2.7 Proved on platform; main graph has one open leaf, Theorem 4.5 Nice escape",
+      "verification_status": "89 local theorems checked without sorryAx; Theorem 2.7 Proved; Claim 4.2 boundary bound ACCEPTED as a standalone lemma; Theorem 4.5 Nice escape remains open",
       "main_theorem_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
       "status_file": "status.md",
       "visibility": "public"
