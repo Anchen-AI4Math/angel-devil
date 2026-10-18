@@ -10,6 +10,9 @@
 - Platform proofs/graph: no proof submissions and no live theorem dependency graph yet.
 - Publication: public GitHub project authorized; Prove2Me human self-audit and
   submission still required, followed by moderation.
+- Repository: https://github.com/Anchen-AI4Math/angel-devil (public, main).
+- Navigation: organization profile and research-index README/catalog updated and
+  read back successfully; see `verification/publication-checks.json`.
 
 ## Next work
 

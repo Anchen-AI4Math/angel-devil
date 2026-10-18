@@ -1,0 +1,46 @@
+{
+  "research-index/README.md": {
+    "sha": "a4e4dd50991b780ebb5d30213cde2a987162f024",
+    "entries": 1
+  },
+  "research-index/catalog.json": {
+    "sha": "c1c97ca74daa35bb564aaa53e8c38bedb3b4668f",
+    "entries": 1
+  },
+  ".github/profile/README.md": {
+    "sha": "706d0fb5ce2c76012f30d120f6f4c20c2b5de826",
+    "entries": 1
+  },
+  "proposal": {
+    "id": "8632c949-8a1d-477d-b87b-ad737965860b",
+    "status": "Draft",
+    "items": 4,
+    "readbacks": 4,
+    "milestones_response": {
+      "proposal_id": "8632c949-8a1d-477d-b87b-ad737965860b",
+      "milestones": [
+        {
+          "item_id": "11d7bdb9-f58d-477d-b3b5-e2eb7003701c",
+          "title": "Theorem 2.7: reduction to a Nice Devil",
+          "milestone_description": "For every positive integer power, if the Angel has no winning strategy, some Nice Devil can keep every finite safe play in a fixed box of positive integer radius. This formulation includes the determinacy observation from the introduction in addition to Theorem 2.7.",
+          "sort_order": 0,
+          "theorem_id": null
+        },
+        {
+          "item_id": "b43b2212-3db9-42da-9d87-908c860df262",
+          "title": "Theorem 4.5: power two escapes every Nice Devil",
+          "milestone_description": "There exists one power-two Angel strategy that survives against every Nice Devil and, against each such opponent, reaches outside every finite box centred at the origin.",
+          "sort_order": 1,
+          "theorem_id": null
+        }
+      ]
+    }
+  },
+  "repository": {
+    "defaultBranchRef": {
+      "name": "main"
+    },
+    "url": "https://github.com/Anchen-AI4Math/angel-devil",
+    "visibility": "PUBLIC"
+  }
+}
