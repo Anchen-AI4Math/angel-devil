@@ -1,0 +1,27 @@
+{
+  "theorem_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+  "theorem_name": "AngelDevil.power_two_wins",
+  "theorem_title": "Theorem 4.6: the Angel of power two wins",
+  "status": "Open",
+  "formal_statement": "theorem AngelDevil.power_two_wins : AngelDevil.AngelWins 2 := by sorry",
+  "natural_language_statement": "There exists a single power-two Angel strategy that makes legal uneaten landings forever against every Devil strategy on the infinite integer lattice, with the Devil moving first and permitted to pass.",
+  "created_at": "2026-10-18T12:47:43.484246+00:00",
+  "vote_count": 0,
+  "tags": [
+    "angel-problem",
+    "combinatorics",
+    "game-theory"
+  ],
+  "preamble": "import Definitions.Def_AngelDevil_Game",
+  "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Theorem 4.6, manuscript p. 8.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "public",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": {
+    "readback": "There exists one total Angel function A mapping a finite list of integer-pair positions and a finite list of optional integer-pair Devil responses to an integer-pair position such that, for every total Devil function D mapping finite position lists to optional points, the following infinite sequence of rounds survives: begin at o = (0,0), with position list [o] and no Devil responses; in each round first append D's response to the current position list to the response list, and then append A's response to the old position list and the extended response list to the position list. For every natural round n, including zero, each coordinate of the new position differs from the preceding position by at most 2 in absolute value, and the new position is unequal to every point selected by D through that round. A Devil response may be a pass or any integer-pair point, including a repeated selection or the Angel's occupied point, and no niceness restriction is imposed. Staying still is permitted as a move only when the landing point has not been selected by the Devil. Strategies are total even on empty or inconsistent histories, and play is recursively defined even after an invalid move, though the stated A guarantees that no such invalid move occurs against any D. No additional assertion that the Angel's positions leave every bounded box appears in this declaration.",
+    "model": "gpt-6",
+    "created_at": "2026-10-18T12:47:47.014867+00:00"
+  }
+}

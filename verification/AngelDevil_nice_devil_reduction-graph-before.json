@@ -1,0 +1,67 @@
+{
+  "root_id": "76719177-828c-4447-b573-06ec5a9f0684",
+  "nodes": [
+    {
+      "node_type": "theorem",
+      "theorem_id": "76719177-828c-4447-b573-06ec5a9f0684",
+      "theorem_name": "AngelDevil.nice_devil_reduction",
+      "theorem_title": "Theorem 2.7: reduction to a Nice Devil",
+      "status": "Open",
+      "formal_statement": "theorem AngelDevil.nice_devil_reduction (p : Nat) (hp : 0 < p) : ¬ AngelDevil.AngelWins p → ∃ N, 0 < N ∧ AngelDevil.NiceCanConfine p N := by sorry",
+      "natural_language_statement": "For every positive integer power, if the Angel has no winning strategy, some Nice Devil can keep every finite safe play in a fixed box of positive integer radius. This formulation includes the determinacy observation from the introduction in addition to Theorem 2.7.",
+      "created_at": "2026-10-18T12:47:22.151585+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_Game",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Theorem 2.7, manuscript p. 3, with the introductory determinacy observation on p. 1.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "theorem_name": "AngelDevil_Game",
+      "theorem_title": "Angel and Devil: infinite-board game and strategies",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "Integer lattice game with Devil-first rounds, passing, history-dependent strategies, legal survival, Nice Devil restrictions, unbounded escape, and confinement of every finite safe prefix. Conventions follow Sections 1-2, Definitions 2.2, 2.3, 2.5 and equation (2).",
+      "created_at": "2026-10-18T12:47:14.248414+00:00",
+      "vote_count": 0,
+      "definition": "import Std\n\n/-! The convention is Mathe's paper: Devil moves first, may pass, and may\neat any square (including the occupied square); only subsequent landing on\nan eaten square loses. Zero-length Angel moves are allowed by Definition 2.5.\nHistories are stored oldest first. Strategies are total also off legal play.\n-/\nnamespace AngelDevil\n\nabbrev Point := Int × Int\ndef origin : Point := (0, 0)\n\ndef Jump (p : Nat) (u v : Point) : Prop :=\n  -(p : Int) ≤ v.1 - u.1 ∧ v.1 - u.1 ≤ (p : Int) ∧\n  -(p : Int) ≤ v.2 - u.2 ∧ v.2 - u.2 ≤ (p : Int)\n\ndef InBox (N : Nat) (v : Point) : Prop := Jump N origin v\n\ndef Journey (p : Nat) (h : List Point) : Prop :=\n  h.head? = some origin ∧\n  ∀ (i : Nat) (u v : Point), h[i]? = some u → h[i+1]? = some v → Jump p u v\n\nabbrev DevilStrategy := List Point → Option Point\nabbrev AngelStrategy := List Point → List (Option Point) → Point\n\nstructure State where\n  visited : List Point\n  burned : List (Option Point)\n\ndef initial : State := ⟨[origin], []⟩\ndef current (s : State) : Point := s.visited.getLastD origin\ndef step (A : AngelStrategy) (D : DevilStrategy) (s : State) : State :=\n  let burned := s.burned ++ [D s.visited]\n  ⟨s.visited ++ [A s.visited burned], burned⟩\n\ndef play (A : AngelStrategy) (D : DevilStrategy) : Nat → State\n  | 0 => initial\n  | n+1 => step A D (play A D n)\n\ndef Survives (p : Nat) (A : AngelStrategy) (D : DevilStrategy) : Prop :=\n  ∀ n, Jump p (current (play A D n)) (current (play A D (n+1))) ∧\n    some (current (play A D (n+1))) ∉ (play A D (n+1)).burned\n\ndef AngelWins (p : Nat) : Prop := ∃ A, ∀ D, Survives p A D\n\n/- Definition 2.2, as made explicit by equation (2): the origin and every\nsquare reachable from a position before the last one are protected. -/\ndef Nice (p : Nat) (D : DevilStrategy) : Prop :=\n  ∀ h, Journey p h → ∀ z, D h = some z →\n    z ≠ origin ∧ ∀ v ∈ h.dropLast, ¬ Jump p v z\n\ndef Escapes (A : AngelStrategy) (D : DevilStrategy) : Prop :=\n  ∀ N : Nat, ∃ n : Nat, ¬ InBox N (current (play A D n))\n\ndef NiceAngelWins (p : Nat) : Prop :=\n  ∃ A, ∀ D, Nice p D → Survives p A D ∧ Escapes A D\n\ndef NiceCanConfine (p N : Nat) : Prop :=\n  ∃ D, Nice p D ∧ ∀ A n,\n    (∀ m, m < n →\n      Jump p (current (play A D m)) (current (play A D (m+1))) ∧\n      some (current (play A D (m+1))) ∉ (play A D (m+1)).burned) →\n    InBox N (current (play A D n))\n\nend AngelDevil\n",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Sections 1-2, manuscript pp. 1-3.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "76719177-828c-4447-b573-06ec5a9f0684",
+      "kind": "structural"
+    }
+  ],
+  "has_hidden_deprecated": false,
+  "has_hidden_deprecated_sketches": false,
+  "depth": 5
+}

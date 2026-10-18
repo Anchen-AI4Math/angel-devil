@@ -30,14 +30,15 @@ read-backs with the source before uploading the proposal.
 
 ## Proven increment versus open obligations
 
-Nine elementary foundations are locally checked. `wall_budget_contradiction`
+The initial increment had nine elementary foundations. The current closed library
+has 42 checked lemmas; reduced journeys preserve Journey, and equation (2)
+produces a Nice strategy. Claim 2.6 (preservation of Allowed) remains unproved. `wall_budget_contradiction`
 proves only the integer-arithmetic incompatibility of the four estimates used
 at the end of Proposition 4.3. It does not establish the geometric estimates.
 `nice_escape_and_reduction_imply_win` assumes both milestones, so it does not
 constitute an unconditional proof of the main theorem.
 
-Remaining work includes strategic determinacy/compactness, reduced journeys and
-their legality, connected-square perimeter estimates, and a precise wall-following
+Remaining work includes strategic determinacy/compactness, the allowed-journey reduction (Claim 2.6), connected-square perimeter estimates, and a precise wall-following
 strategy with its escape proof. The square-boundary and intermediate geometric
 claims are not yet encoded as standalone proposal items. The current two
 milestones are large, faithful targets that require that additional work.

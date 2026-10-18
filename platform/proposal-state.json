@@ -1,6 +1,6 @@
 {
   "id": "8632c949-8a1d-477d-b87b-ad737965860b",
-  "status": "Draft",
+  "status": "In review",
   "item_ids": [
     "7cf51c09-0856-4446-89e3-f20471709f7b",
     "11d7bdb9-f58d-477d-b3b5-e2eb7003701c",
@@ -8,5 +8,11 @@
     "7e435e24-47c9-4a59-87b8-f5d952473dbe"
   ],
   "main_item_id": "7e435e24-47c9-4a59-87b8-f5d952473dbe",
-  "api_version": "0.12.7"
+  "api_version": "0.12.7",
+  "theorem_ids": {
+    "game": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+    "reduction": "76719177-828c-4447-b573-06ec5a9f0684",
+    "nice_win": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+    "main_goal": "6204cf5d-3e21-4e77-91ee-856e578b4253"
+  }
 }

@@ -1,0 +1,18 @@
+{
+  "root_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+  "open_leaves": [
+    {
+      "theorem_id": "76719177-828c-4447-b573-06ec5a9f0684",
+      "theorem_name": "AngelDevil.nice_devil_reduction",
+      "status": "Open",
+      "closability": 0
+    },
+    {
+      "theorem_id": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+      "theorem_name": "AngelDevil.power_two_beats_nice_devil",
+      "status": "Open",
+      "closability": 0
+    }
+  ],
+  "total": 2
+}

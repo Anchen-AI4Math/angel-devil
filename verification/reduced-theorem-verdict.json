@@ -1,0 +1,20 @@
+{
+  "id": "2df62ccd-ab30-4bcf-88ca-8a4003fd23c9",
+  "kind": "problem",
+  "theorem_name": "AngelDevil.reducedJourney_is_journey",
+  "theorem_title": "Reduced journeys preserve the movement constraints",
+  "formal_statement": "theorem AngelDevil.reducedJourney_is_journey (p : Nat) (h : List AngelDevil.Point) (hj : AngelDevil.Journey p h) : AngelDevil.Journey p (AngelDevil.reducedJourney p h) := by sorry",
+  "natural_language_statement": "For any nonnegative integer power and any finite journey starting at the origin with each coordinate changing by at most that power per step, the earliest-predecessor reduction is again a journey with the same movement constraint. This states the structural validity of the reduction; the separate assertion about avoiding squares eaten by the transformed Devil is not included.",
+  "definitions": "import Definitions.Def_AngelDevil_ReducedJourney",
+  "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 3, equation (1) and the paragraph immediately following it.",
+  "tags": [
+    "combinatorics",
+    "angel-problem"
+  ],
+  "visibility": "public",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "09953273-0806-4e9f-a1da-0b10a2292ffb",
+  "created_at": "2026-10-18T12:58:06.563844+00:00",
+  "updated_at": "2026-10-18T12:58:13.95616+00:00"
+}

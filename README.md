@@ -12,13 +12,14 @@ an already published mathematical result; it claims no new mathematical solution
 - An explicit infinite integer-board game with Devil-first rounds, passes,
   history-dependent strategies, survival, Nice Devils, escape, and finite-prefix
   confinement.
-- Nine checked foundational lemmas, including the final arithmetic contradiction
+- Forty-two checked foundational and finite-journey lemmas, including the final arithmetic contradiction
   used in Proposition 4.3 and a conditional assembly of the two paper milestones.
   The geometric estimates and the two milestones themselves remain unproved.
 - Three open statements: the Nice Devil reduction (Theorem 2.7, including the
   introductory determinacy observation), Nice Devil escape (Theorem 4.5), and
   the main result (Theorem 4.6).
-- A Prove2Me **Draft proposal**, not a launched or verified mission. Open
+- The Prove2Me proposal is **In review** after human submission. Its three
+  theorem statements are published and still Open. Open
   [Prove2Me](https://prove2.me), then **My missions**, and select
   **The Angel of Power 2 Wins (Mathe)**. Proposal ID:
   `8632c949-8a1d-477d-b87b-ad737965860b`.
@@ -36,10 +37,11 @@ pinned to `v4.33.1`; the proposal targets the platform's Mathlib environment
 `0df444a360eaa60ab8c11dca51a86af692955474`. Introducing Mathlib later must preserve
 that pin or deliberately migrate the proposal.
 
-`Solutions/Foundation.lean` contains no `sorry` and imports only the definition
-bundle. The axiom report contains no `sorryAx`. `Theorems/PaperTargets.lean`
+The closed library (`Foundation`, `Histories`, `ReducedJourney`, `NiceReduction`) contains no
+`sorry` placeholders and imports no open theorem statements. The axiom report contains no `sorryAx`. `Theorems/PaperTargets.lean`
 contains **three explicit `sorry` placeholders** and is checked separately for
-statement elaboration only. The default library build does not prove them.
+statement elaboration only. `Solutions/MainReduction.lean` is checked separately: the platform accepted it
+as `SKETCH_ACCEPTED`, with two open milestone dependencies. It is not a closed proof.
 
 ## Source and audit
 
@@ -52,13 +54,24 @@ statement elaboration only. The default library build does not prove them.
 - [Status and next steps](status.md).
 - [Mission proposal description](platform/proposal-description.md).
 
-The proposal has four items (one definition bundle and three theorems), two
-milestones, and an independent read-back for every item. Human confirmation of
-each item and **Submit Proposal** are still required on Prove2Me; public launch
-then depends on moderation. No server-side proof verdict or live dependency
-graph is claimed.
+The proposal has four items and two milestones. Human submission is complete;
+moderation is pending. The main theorem now has a verified reduction to its two
+open milestones. See [the live main theorem](https://prove2.me/theorems/6204cf5d-3e21-4e77-91ee-856e578b4253)
+and [the recorded graph](verification/main-graph-after.json).
+
+The earliest-predecessor reduction now preserves valid finite journeys in Lean.
+This is structural groundwork for Claim 2.6, not yet its assertion about eaten
+squares under the transformed Devil. The finite-prefix correspondence, strategy
+reduction, determinacy argument and geometric escape proof remain to be completed.
 
 ## Publication convention
 
 Formalization of already public work is public by default. Original mathematical
 results must stay private until the owner explicitly authorizes publication.
+
+The reduced-journey preservation theorem has server verdict `ACCEPTED` (submission
+`b5e68d92-4b5a-41c1-bd2c-27a41a0c3b4d`); see
+[verdict](verification/reduced-journey-verdict.json). This independent structural
+lemma is not yet connected to the main graph. Additional local proofs establish
+order-preserving deletion, the Nice property of equation (2), and the bridge from
+safe play prefixes to allowed finite journeys. Claim 2.6 itself remains open.

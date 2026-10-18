@@ -1,0 +1,17 @@
+{
+  "missions": [
+    {
+      "slug": "angel-devil",
+      "title": "The Angel of Power 2 Wins (Mathe)",
+      "repository": "https://github.com/Anchen-AI4Math/angel-devil",
+      "proposal_id": "8632c949-8a1d-477d-b87b-ad737965860b",
+      "mission_id": null,
+      "proposal_status": "In review",
+      "research_status": "formalization-in-progress",
+      "verification_status": "42 local lemmas checked; reduced journey preservation ACCEPTED; main reduction SKETCH_ACCEPTED with two open children",
+      "main_theorem_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+      "status_file": "status.md",
+      "visibility": "public"
+    }
+  ]
+}

@@ -3,19 +3,22 @@ from pathlib import Path
 import subprocess
 import json
 import sys
+import re
 sys.stdout.reconfigure(encoding='utf-8')
 
 root = Path(__file__).resolve().parents[1]
 out = root / 'verification'
 out.mkdir(exist_ok=True)
-names = ['jump_self', 'jump_mono', 'jump_symm', 'jump_add', 'play_lengths',
-         'pass_is_nice', 'wall_budget_contradiction',
-         'nice_wins_excludes_confinement', 'nice_escape_and_reduction_imply_win']
+closed_modules = ['Foundation', 'Histories', 'ReducedJourney', 'NiceReduction']
+names = []
+for module in closed_modules:
+    source = (root/'Solutions'/(module+'.lean')).read_text(encoding='utf-8-sig')
+    names.extend(re.findall(r'^theorem (\w+)', source, re.MULTILINE))
 audit = root / 'tmp' / 'Audit.lean'
 audit.parent.mkdir(exist_ok=True)
-audit.write_text('import Solutions.Foundation\n' + '\n'.join(
+audit.write_text('import Solutions.NiceReduction\n' + '\n'.join(
     '#print axioms AngelDevil.' + n for n in names) + '\n', encoding='utf-8')
-commands = [('build', ['lake', 'build', 'Solutions.Foundation']),
+commands = [('build', ['lake', 'build', 'Solutions.NiceReduction']),
             ('axioms', ['lake', 'env', 'lean', str(audit)]),
             ('open-target-elaboration', ['lake', 'env', 'lean', 'Theorems/PaperTargets.lean'])]
 results = {}
