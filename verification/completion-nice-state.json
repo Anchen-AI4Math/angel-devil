@@ -1,0 +1,27 @@
+{
+  "theorem_id": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+  "theorem_name": "AngelDevil.power_two_beats_nice_devil",
+  "theorem_title": "Theorem 4.5: power two escapes every Nice Devil",
+  "status": "Proved",
+  "formal_statement": "theorem AngelDevil.power_two_beats_nice_devil : AngelDevil.NiceAngelWins 2 := by sorry",
+  "natural_language_statement": "There exists one power-two Angel strategy that survives against every Nice Devil and, against each such opponent, reaches outside every finite box centred at the origin.",
+  "created_at": "2026-10-18T12:47:30.798633+00:00",
+  "vote_count": 0,
+  "tags": [
+    "angel-problem",
+    "combinatorics",
+    "game-theory"
+  ],
+  "preamble": "import Definitions.Def_AngelDevil_Game",
+  "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Theorem 4.5, manuscript p. 8.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "public",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": {
+    "readback": "There exists a total function A taking a finite list of integer-pair positions and a finite list of optional integer-pair Devil responses to an integer-pair position, such that the following holds for every total Devil function D from finite position lists to optional points satisfying this restriction: on every nonempty position list starting at o = (0,0) in which each coordinate changes by at most 2 in absolute value between consecutive entries, any point selected by D is different from o and, for each entry before the last entry, differs from that entry by more than 2 in absolute value in at least one coordinate. Starting from position list [o] and no Devil responses, recursively in each round append D's response to the position history to the response list, then append A's response to the old position history and extended response list to the position history. For every natural round n, the newly appended position differs from the preceding position by at most 2 in each coordinate and is unequal to every point selected by D in the first n + 1 rounds. Moreover, for every natural N, including zero, there exists a natural round n such that at least one coordinate of the position after n rounds has absolute value greater than N. Thus the same A satisfies both assertions for every D obeying the restriction. Passes and repeated selections are allowed, staying still is a permitted jump, D is unrestricted on histories failing the stated condition, and on the singleton origin history its only forbidden point is the origin. The functions remain defined on empty or inconsistent inputs, and the recursion continues even after failure. The escape assertion requires an exit at some time for each box, without an eventual-stay-out condition; n = 0 is an allowed quantified time but cannot witness an exit because its position is o.",
+    "model": "gpt-6",
+    "created_at": "2026-10-18T12:47:33.526058+00:00"
+  }
+}

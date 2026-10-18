@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-10-18T14:41:27.398769+00:00",
+  "original_remote_statements_match_reference": true,
+  "original_three_targets_proved": true,
+  "local_exact_target_checks_passed": true,
+  "local_theorems_audited": 185,
+  "only_standard_axioms": true,
+  "open_leaves": 0,
+  "main_graph_nodes": 25,
+  "main_graph_edges": 38,
+  "no_unexpanded_adjacency": true,
+  "verified_geometric_dependency_path": [
+    "595569d4-9682-4a6c-9967-8e47f242c4c0",
+    "sketch-52287fc3-ae4a-4382-a8cb-380bb94d7fd3",
+    "775a4edf-d28a-4a62-89b2-2c5de5c2feaf",
+    "sketch-b8f1dd37-d9a2-4dec-8cd8-df14d87cadd5",
+    "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+    "sketch-a7e909c2-b877-43ef-86cf-e400407b697f",
+    "6204cf5d-3e21-4e77-91ee-856e578b4253"
+  ],
+  "source_pdf_checksum_verified": true,
+  "mission_moderation": "In review; mission_id null; administrative status not claimed complete"
+}

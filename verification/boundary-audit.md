@@ -1,5 +1,7 @@
 # Boundary-counting increment — 2026-10-18
 
+Historical increment snapshot. See [completion audit](completion-audit.md) for the current, closed proof status.
+
 Mathe Claim 4.2 is now **Proved** on Prove2Me:
 
 - Theorem: `595569d4-9682-4a6c-9967-8e47f242c4c0`.

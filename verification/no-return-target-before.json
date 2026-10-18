@@ -1,0 +1,23 @@
+{
+  "theorem_id": "775a4edf-d28a-4a62-89b2-2c5de5c2feaf",
+  "theorem_name": "AngelDevil.wallTrace_never_returns",
+  "theorem_title": "Geometric no-return for the power-two wall trace",
+  "status": "Open",
+  "formal_statement": "theorem AngelDevil.wallTrace_never_returns (D : AngelDevil.DevilStrategy) (hnice : AngelDevil.Nice 2 D) (n : Nat) (hn : 0 < n) : AngelDevil.wallTrace D n \u2260 AngelDevil.initialWall := by sorry",
+  "natural_language_statement": "Against every Nice Devil of power two, the specified boundary-walking strategy never encounters its initial directed wall at any positive wall-transition index. The initial wall is the east side of square (-1,0). The trace uses two wall transitions per Angel turn and the obstacle set after that turn's Devil move. This is the geometric no-return obligation underlying the escape argument; it does not assume non-repetition or escape.",
+  "created_at": "2026-10-18T14:13:50.772574+00:00",
+  "vote_count": 0,
+  "tags": [
+    "angel-problem",
+    "combinatorics",
+    "game-theory"
+  ],
+  "preamble": "import Definitions.Def_AngelDevil_WallWalk",
+  "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303; author manuscript pp. 6-8, octagonal wall-following rule, Claim 3.1 analogue, Proposition 4.3 and Theorem 4.5. Two wall transitions per turn give an admissible power-two implementation; no-return is the remaining geometric obligation.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "public",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

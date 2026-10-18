@@ -1,5 +1,7 @@
 # Wall strategy and geometric frontier — 2026-10-18
 
+Historical increment snapshot. See [completion audit](completion-audit.md) for the current, closed proof status.
+
 ## Verified proof and reduction
 
 | Item | ID | Status |

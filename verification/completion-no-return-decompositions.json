@@ -1,0 +1,47 @@
+{
+  "decompositions": [
+    {
+      "submission_id": null,
+      "created_by": null,
+      "created_at": null,
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "778bd072-6fcb-407d-85d0-a013477fb67c",
+          "definition_name": "AngelDevil_WallWalk",
+          "theorem_title": "Octagonal boundary walk and the power-two wall strategy",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    },
+    {
+      "submission_id": "52287fc3-ae4a-4382-a8cb-380bb94d7fd3",
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-18T14:37:27.949487+00:00",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "778bd072-6fcb-407d-85d0-a013477fb67c",
+          "definition_name": "AngelDevil_WallWalk",
+          "theorem_title": "Octagonal boundary walk and the power-two wall strategy",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "theorem_id": "595569d4-9682-4a6c-9967-8e47f242c4c0",
+          "theorem_name": "AngelDevil.connectedSquares_perimeter",
+          "theorem_title": "Claim 4.2: boundary bound for connected squares",
+          "status": "Proved",
+          "ordinal": 1,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    }
+  ]
+}

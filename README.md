@@ -1,34 +1,29 @@
 # The Angel of Power 2 Wins — Lean formalization
 
-Formalization in progress of Andras Mathe, *The Angel of power 2 wins*,
+Completed formalization of Andras Mathe, *The Angel of power 2 wins*,
 Combinatorics, Probability and Computing 16 (2007), 363–374.
 [Paper DOI](https://doi.org/10.1017/S0963548306008303).
 
-**The main theorem is not yet proved in this repository.** This project formalizes
-an already published mathematical result; it claims no new mathematical solution.
+**The original main theorem is Proved on Prove2Me and proved in the closed local
+Lean library.** This formalizes a published result; it claims no new mathematical
+solution and no independent peer review.
 
-## Current increment
+## Verified result
 
-- An explicit infinite integer-board game with Devil-first rounds, passes,
-  history-dependent strategies, survival, Nice Devils, escape, and finite-prefix
-  confinement.
-- 123 checked theorems. Claim 2.6, Theorem 2.4, uniform confinement,
-  and the original Nice Devil reduction (Theorem 2.7) are proved.
-- Claim 4.2 (connected-square perimeter at most 2n+2) is proved locally
-  and ACCEPTED on Prove2Me; its use in the runner proof remains to be built.
-- The explicit wall-following strategy, survival against every Nice Devil,
-  persistence of used squares, and the first-repeat argument are proved.
-  Nonreturn of its initial directed wall implies unbounded escape.
-- The no-return-to-winning implication is ACCEPTED on Prove2Me; its verified
-  reduction connects the original Theorem 4.5 to the geometric open child.
-  See [graph audit](verification/wall-graph-audit.md).
-- The remaining geometric obligation is to prove that this trace never returns
-  to its initial wall. Theorem 4.5 and the main result (Theorem 4.6) remain open.
-- The Prove2Me proposal is **In review** after human submission. Its original
-  theorem statements are published; Theorem 2.7 is now Proved. Open
-  [Prove2Me](https://prove2.me), then **My missions**, and select
-  **The Angel of Power 2 Wins (Mathe)**. Proposal ID:
-  `8632c949-8a1d-477d-b87b-ad737965860b`.
+- `AngelDevil.power_two_wins : AngelDevil.AngelWins 2` — one power-two strategy
+  survives against every Devil in the original infinite-board game.
+- `AngelDevil.power_two_beats_nice_devil : AngelDevil.NiceAngelWins 2` — one
+  explicit strategy survives and escapes every finite box against every Nice Devil.
+- The original Theorem 2.7 reduction is also proved, using finite-game
+  determinacy, compactness, reduced journeys and confinement transfer.
+- **185 local theorems** checked, with only `propext`, `Classical.choice` and
+  `Quot.sound` in their axiom dependencies; no `sorryAx` or custom axioms.
+- **Zero open leaves** in the platform main graph. The geometric no-return
+  proof is ACCEPTED and actually imports the proved Claim 4.2 perimeter bound.
+
+[Live main theorem](https://prove2.me/theorems/6204cf5d-3e21-4e77-91ee-856e578b4253)
+· [Completion audit](verification/completion-audit.md)
+· [Closed local assembly](Solutions/Completed.lean)
 
 ## Reproduce local checks
 
@@ -42,38 +37,39 @@ python scripts/verify.py
 ```
 
 Lean is pinned to `v4.33.1` and Mathlib to
-`0df444a360eaa60ab8c11dca51a86af692955474`, exactly matching the platform environment.
-The strategy compactness proof uses Mathlib's Rado selection lemma.
+`0df444a360eaa60ab8c11dca51a86af692955474`, matching the platform environment.
+The verifier builds `Solutions.Completed`, checks the exact types of all three
+original mission targets, and audits the axioms of the closed proof library.
+It separately elaborates the original reference statements.
 
-The closed library is built through `Solutions.FiniteDeterminacy`; it contains
-no `sorry` placeholders, imports no platform theorem placeholders, and has no
-`sorryAx` in its printed axiom dependencies. `Theorems/` files are statement
-reference mirrors and may contain `sorry` even for platform-proved results.
-They are excluded from the closed-library audit. The main platform reduction
-is checked separately; it remains incomplete while Theorem 4.5 is open.
+`Theorems/` contains platform statement mirrors with `sorry`, including mirrors
+of results now proved on the server. These are excluded from the closed local
+library. Files packaging platform reductions import those mirrors for protocol
+compatibility; compiling such a package alone is not a closed local proof.
+Use `Solutions.Completed` and `scripts/verify.py` for the closed proof.
 
-## Source and audit
+## Proof route
+
+The Nice strategy uses the paper's octagonal corner convention, with exactly
+two wall transitions per turn. Each transition moves the outside square by at
+most one king step. Nice protection preserves earlier empty squares, so the
+first repeated wall would be the initial wall. A first contact with the x-axis
+would yield a finite frozen boundary cycle whose lower length bound exceeds
+the connected-component perimeter upper bound. Therefore no return occurs,
+and a finite-box argument proves escape. Theorem 2.7 then gives the original
+unrestricted Angel theorem. See [the geometric proof explanation](platform/no-return-explanation.md)
+and [implementation/source comparison](verification/wall-source-comparison.md).
+
+## Source, mission and publication
 
 - [Source provenance and checksum](papers/source.json). The downloaded author
-  manuscript is retained locally in `papers/`; its PDF/text are not redistributed
-  in this repository.
-- [Source-to-model audit](verification/source-audit.md).
-- [Independent blind read-backs](verification/readbacks.json).
-- [Local validation results](verification/local-checks.json).
-- [Status and next steps](status.md).
-- [Mission proposal description](platform/proposal-description.md).
-
-The proposal has four items and two milestones. Human submission is complete;
-moderation is pending. The main theorem now has a verified reduction to its two
-milestones, one proved and one open. See [the live main theorem](https://prove2.me/theorems/6204cf5d-3e21-4e77-91ee-856e578b4253)
-and [the recorded graph](verification/main-graph-after.json).
-
-Claim 2.6, Theorem 2.4, finite-survival compactness, finite-game determinacy,
-and uniform confinement have server verdict **ACCEPTED**. The original
-Theorem 2.7 is **Proved** by dependency closure. The main graph now has one
-open leaf: Theorem 4.5. See [current graph audit](verification/compactness-graph-audit.md).
-
-## Publication convention
+  manuscript is retained locally in `papers/`; PDF/text are not redistributed.
+- [Source-to-model audit](verification/source-audit.md) and
+  [original independent blind read-backs](verification/readbacks.json).
+- [Local validation](verification/local-checks.json) and [current status](status.md).
+- Prove2Me proposal `8632c949-8a1d-477d-b87b-ad737965860b` remains **In review**
+  after human submission, with `mission_id: null`. Its published original
+  theorem graph is complete; platform mission moderation is a separate process.
 
 Formalization of already public work is public by default. Original mathematical
 results must stay private until the owner explicitly authorizes publication.

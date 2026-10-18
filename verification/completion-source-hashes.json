@@ -1,0 +1,10 @@
+{
+  "Definitions/Def_AngelDevil_Game.lean": "a2d6ea26117708120710e884dc035202f864c744cb9732ae98447f28f83a028f",
+  "Definitions/Def_AngelDevil_WallWalk.lean": "cb35b82d6b20be507a908209fb4191e650bf42137b21aef943c8524770f45b94",
+  "Solutions/WallGeometry.lean": "82c7831ec9aaaf6d36a2d9ed86ae12ffe67ab51ba599276cc337756b63bac3ba",
+  "Solutions/WallComponent.lean": "5067652fe8a9d05ea3ff675a2474f9a34520cd74063a4c2db21d94f6b3816596",
+  "Solutions/WallTruncation.lean": "b0cc06cf4046cb7a3bcef69d621579eaebc40fc617d6f2e9cf0e468704b593e3",
+  "Solutions/WallNoReturn.lean": "f86fac069c5a3fce827301afb871e468e7d9fe45c4631f6b9c2b00ad158c883a",
+  "Solutions/Completed.lean": "c12d6eb3305a6ac6f003c95cf0242d4893721dce9bfc4ab7715edfb515a21c7a",
+  "platform/no-return-solution.lean": "a864544d0933e2e9a0c1ab9214da1ce2814fca4fb8547ead44f9341f4eca8048"
+}

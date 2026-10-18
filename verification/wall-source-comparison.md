@@ -21,18 +21,21 @@ of two painted walls per turn. We do not assert that the implementation takes
 the paper's maximal possible route each turn. Its survival, protection, and
 conditional escape properties are independently proved for this exact rule.
 
-`wallTrace_never_returns` is the explicit remaining geometric obligation for
-this implementation. It states nonreturn of the complete initial directed
-wall, not nonreturn of the Angel's position and not the stronger assertion that
-the green line never touches the x-axis. The intended geometric proof follows
-the first-contact boundary count of Proposition 4.3; that proof has not been
-completed, and this open statement must not be treated as an established
-consequence merely because it resembles the paper's assertion.
+`wallTrace_never_returns` states nonreturn of the complete initial directed
+wall. It is now proved by `Solutions/WallNoReturn.lean`, through the stronger
+positive-height invariant for every positive-index wall start. The proof uses
+the first-contact boundary count of Proposition 4.3 for this exact strategy;
+it does not infer correctness merely from resemblance to the paper.
 
-`niceAngelWins_of_wall_no_return` has this obligation as an explicit hypothesis.
-Its conclusion is the original `NiceAngelWins 2`, with one strategy working for
-every Nice Devil. Its checked proof supplies the strategy, survival, persistence
-of empty outside squares, first-repeat argument, and finite-box escape argument.
-It does not assume these intermediate claims. The open geometric hypothesis is
-kept as a separate child in the intended platform reduction, not concealed in
-a definition or replaced by a finite experiment.
+The finite truncation retains the pre-eaten column and the recorded nonnegative
+quadrant burns. The wall orbit stays in one side-connected component, which
+permits the proved Claim 4.2 bound even if unrelated obstacles are disconnected.
+The column's top wall lies in the initial cycle by an explicit return path and
+injectivity. Two coordinate potentials prove the lower length count. The
+resulting contradiction rules out first contact with the x-axis.
+
+`niceAngelWins_of_wall_no_return` retains this condition as an explicit
+hypothesis, now discharged by the separate proved child. Its conclusion is the
+original `NiceAngelWins 2`, with one strategy working for every Nice Devil.
+The main theorem then follows through the original Theorem 2.7 reduction.
+See `completion-audit.md` for closed local and server evidence.

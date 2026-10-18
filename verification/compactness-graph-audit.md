@@ -1,5 +1,7 @@
 # Compactness branch audit — 2026-10-18
 
+Historical increment snapshot. See [completion audit](completion-audit.md) for the current, closed proof status.
+
 The exact original Theorem 2.7 (`76719177-828c-4447-b573-06ec5a9f0684`)
 now has platform status **Proved**. The original main theorem
 (`6204cf5d-3e21-4e77-91ee-856e578b4253`) remains **Open**.

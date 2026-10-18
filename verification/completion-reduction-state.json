@@ -1,0 +1,27 @@
+{
+  "theorem_id": "76719177-828c-4447-b573-06ec5a9f0684",
+  "theorem_name": "AngelDevil.nice_devil_reduction",
+  "theorem_title": "Theorem 2.7: reduction to a Nice Devil",
+  "status": "Proved",
+  "formal_statement": "theorem AngelDevil.nice_devil_reduction (p : Nat) (hp : 0 < p) : \u00ac AngelDevil.AngelWins p \u2192 \u2203 N, 0 < N \u2227 AngelDevil.NiceCanConfine p N := by sorry",
+  "natural_language_statement": "For every positive integer power, if the Angel has no winning strategy, some Nice Devil can keep every finite safe play in a fixed box of positive integer radius. This formulation includes the determinacy observation from the introduction in addition to Theorem 2.7.",
+  "created_at": "2026-10-18T12:47:22.151585+00:00",
+  "vote_count": 0,
+  "tags": [
+    "angel-problem",
+    "combinatorics",
+    "game-theory"
+  ],
+  "preamble": "import Definitions.Def_AngelDevil_Game",
+  "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Theorem 2.7, manuscript p. 3, with the introductory determinacy observation on p. 1.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "public",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": {
+    "readback": "For every positive natural number p, assume that there does not exist a total Angel strategy that survives against every total Devil strategy, where points are integer pairs, the Angel starts at (0,0), a Devil strategy maps each finite list of Angel positions to either a point or a pass, and an Angel strategy maps that position list together with the list of Devil responses to its next point. In each round the Devil responds first, and the Angel then responds after seeing that response; survival means that in every round each coordinate changes by at most p in absolute value and the new point is unequal to all points selected by the Devil so far, including in that round. Then there exist a positive natural number N and one Devil strategy D such that (i) for every nonempty finite position list starting at (0,0) with all consecutive coordinate changes at most p in absolute value, any point selected by D is different from (0,0) and has a coordinate difference of absolute value greater than p from each position occurring before the last entry, and (ii) for every total Angel strategy A and every natural number n, if all first n rounds of the recursively defined play of A against D satisfy the stated movement and avoidance conditions, then both coordinates of its position after n rounds lie in [\u2212N,N]. Passes and repeated selections are permitted; D has no restrictions on position lists failing the stated journey condition, while on the singleton origin list it is only forbidden to select the origin. Staying still is a permitted jump. The strategies and play are total, including after failures; the confinement conclusion concerns every finite safe prefix, whether or not it extends to infinite survival. At n = 0 its premise is empty and its conclusion concerns the origin. The assumption rules out a single universally surviving Angel strategy; it does not itself posit a single universally defeating Devil strategy.",
+    "model": "gpt-6",
+    "created_at": "2026-10-18T12:47:25.159405+00:00"
+  }
+}

@@ -1,4 +1,4 @@
-"""Build proved code, inspect axioms, then separately elaborate open targets."""
+"""Check the closed proof library against the three original mission targets."""
 from pathlib import Path
 import subprocess
 import json
@@ -9,16 +9,23 @@ sys.stdout.reconfigure(encoding='utf-8')
 root = Path(__file__).resolve().parents[1]
 out = root / 'verification'
 out.mkdir(exist_ok=True)
-closed_modules = ['Foundation', 'Histories', 'ReducedJourney', 'NiceReduction', 'Confinement', 'FiniteHorizon', 'StrategyCompactness', 'FiniteDeterminacy', 'SquareBoundary', 'WallWalk', 'WallStrategy']
+closed_modules = ['Foundation', 'Histories', 'ReducedJourney', 'NiceReduction', 'Confinement', 'FiniteHorizon', 'StrategyCompactness', 'FiniteDeterminacy', 'SquareBoundary', 'WallWalk', 'WallStrategy', 'WallGeometry', 'WallComponent', 'WallTruncation', 'WallNoReturn', 'Completed']
 names = []
 for module in closed_modules:
     source = (root/'Solutions'/(module+'.lean')).read_text(encoding='utf-8-sig')
     names.extend(re.findall(r'^theorem (\w+)', source, re.MULTILINE))
 audit = root / 'tmp' / 'Audit.lean'
 audit.parent.mkdir(exist_ok=True)
-audit.write_text('import Solutions.FiniteDeterminacy\nimport Solutions.SquareBoundary\nimport Solutions.WallStrategy\n' + '\n'.join(
+target_checks = '''
+example (p : Nat) (hp : 0 < p) :
+    ¬ AngelDevil.AngelWins p → ∃ N, 0 < N ∧ AngelDevil.NiceCanConfine p N :=
+  AngelDevil.nice_devil_reduction p hp
+example : AngelDevil.NiceAngelWins 2 := AngelDevil.power_two_beats_nice_devil
+example : AngelDevil.AngelWins 2 := AngelDevil.power_two_wins
+'''
+audit.write_text('import Solutions.Completed\n' + target_checks + '\n'.join(
     '#print axioms AngelDevil.' + n for n in names) + '\n', encoding='utf-8')
-commands = [('build', ['lake', 'build', 'Solutions.FiniteDeterminacy', 'Solutions.SquareBoundary', 'Solutions.WallStrategy']),
+commands = [('build', ['lake', 'build', 'Solutions.Completed']),
             ('axioms', ['lake', 'env', 'lean', str(audit)]),
             ('open-target-elaboration', ['lake', 'env', 'lean', 'Theorems/PaperTargets.lean'])]
 results = {}
@@ -30,9 +37,16 @@ for name, command in commands:
     if proc.returncode: raise SystemExit(proc.returncode)
     if name == 'axioms' and 'sorryAx' in text:
         raise SystemExit('Unexpected sorry dependency in proven code')
+    if name == 'axioms':
+        allowed = {'propext', 'Classical.choice', 'Quot.sound'}
+        for group in re.findall(r'depends on axioms: \[([^\]]*)\]', text):
+            actual = {item.strip() for item in group.split(',') if item.strip()}
+            if not actual <= allowed:
+                raise SystemExit('Unexpected axiom dependencies: '+repr(actual-allowed))
     results[name] = {'exit_code': proc.returncode}
 results.update({'proved_foundation_theorems': names,
-                'paper_targets_proved': False,
+                'paper_targets_proved': True,
+                'original_target_types_checked': ['nice_devil_reduction', 'power_two_beats_nice_devil', 'power_two_wins'],
                 'paper_target_placeholders': 3,
                 'toolchain': (root/'lean-toolchain').read_text().strip()})
 (out / 'local-checks.json').write_text(json.dumps(results, indent=2), encoding='utf-8')
