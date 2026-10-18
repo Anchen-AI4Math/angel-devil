@@ -1,6 +1,6 @@
 # Section 2 proof and dependency audit — 2026-10-18
 
-The closed local library builds with 52 declarations and no `sorryAx` in the
+The initial Section 2 increment built with 52 declarations and no `sorryAx` in the
 printed axiom dependencies. Platform reference modules remain placeholders and
 are deliberately excluded from this closed-library audit.
 
@@ -17,10 +17,8 @@ identify the children. No node reports unexplored children or parents. The
 accepted Claim 2.6 and Theorem 2.4 submissions also import the actual NiceReduction
 definition; these definition edges do not represent unresolved mathematical work.
 
-`main-open-leaves-after.json` reports exactly two open leaves:
-
-- `2202ef8d-e4d0-4b0b-81af-3c0549e73536`: uniform confinement, including determinacy.
-- `880e0f8b-5ca9-4de7-965e-33979f37fbaf`: power-two escape against Nice Devils.
-
-The original main theorem is still Open. A connected verified partial graph does
-not establish either remaining result or completion of the mission.
+At this initial audit there were two open leaves: uniform confinement and
+power-two escape. Uniform confinement has since been proved and the original
+Theorem 2.7 closed. The graph JSON files are refreshed to the latest state;
+see `compactness-graph-audit.md` for the current one-leaf frontier. The main
+theorem remains Open pending Theorem 4.5.

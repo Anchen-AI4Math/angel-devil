@@ -1,0 +1,12 @@
+{
+  "compactness": {
+    "theorem_name": "AngelDevil.finite_survival_compactness",
+    "formal_statement": "theorem AngelDevil.finite_survival_compactness (p : Nat)\n    (hf : \u2200 n, FiniteAngelWins p n) : AngelWins p := by sorry",
+    "preamble": "import Definitions.Def_AngelDevil_FiniteHorizon\nopen AngelDevil"
+  },
+  "finite-determinacy": {
+    "theorem_name": "AngelDevil.finite_game_determined",
+    "formal_statement": "theorem AngelDevil.finite_game_determined (p T : Nat) :\n    FiniteAngelWins p T \u2228 \u2203 D, \u2200 A, \u00ac SafeFor p A D T := by sorry",
+    "preamble": "import Definitions.Def_AngelDevil_FiniteHorizon\nopen AngelDevil"
+  }
+}

@@ -5,7 +5,7 @@ Original mathematical results stay private until the user explicitly authorizes
 publication; do not disclose them through public navigation or platform items.
 
 Work only in this independent topic repository. Read README.md and status.md first.
-Build proven code with `lake build Solutions.Confinement`; check open statements separately with `lake env lean Theorems/PaperTargets.lean`. Never count the latter as proved.
+Build proven code with `lake build Solutions.FiniteDeterminacy`; check open statements separately with `lake env lean Theorems/PaperTargets.lean`. Never count the latter as proved.
 Do not import Theorems/PaperTargets into the proven library. Solutions/MainReduction.lean and Solutions/NiceMilestoneReduction.lean are tracked open sketches and must be checked separately from the closed proof library. Keep source PDFs local and gitignored.
 
 # AI4Math 工作区

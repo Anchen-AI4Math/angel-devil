@@ -31,14 +31,14 @@ read-backs with the source before uploading the proposal.
 ## Proven increment versus open obligations
 
 The initial increment had nine elementary foundations. The current closed library
-has 52 checked lemmas. Claim 2.6 (preservation of Allowed) and Theorem 2.4
+has 74 checked lemmas. Claim 2.6 (preservation of Allowed) and Theorem 2.4
 (transfer of confinement) are locally proved without open imports. `wall_budget_contradiction`
 proves only the integer-arithmetic incompatibility of the four estimates used
 at the end of Proposition 4.3. It does not establish the geometric estimates.
 `nice_escape_and_reduction_imply_win` assumes both milestones, so it does not
 constitute an unconditional proof of the main theorem.
 
-Remaining work includes strategic determinacy/compactness, connected-square perimeter estimates, and a precise wall-following
+Remaining work includes connected-square perimeter estimates and a precise wall-following
 strategy with its escape proof. The square-boundary and intermediate geometric
 claims are not yet encoded as standalone proposal items. The current two
 milestones are large, faithful targets that require that additional work.
@@ -72,5 +72,35 @@ strategy-quantified finite-prefix definition.
 zero-power/zero-radius cases. See `section2-readbacks.json` for the independent
 readback. The separate `uniform_confinement` target retains both the absence
 of an Angel winning strategy and the uniform choice of one radius and one
-Devil before all Angels and times. It remains unproved; determinacy is not
-introduced as an extra hypothesis or axiom.
+Devil before all Angels and times. It is now proved locally by compactness and finite-game determinacy, without
+introducing determinacy as an extra hypothesis or axiom.
+
+## Compactness and determinacy audit
+
+The finite-horizon quantifiers are `forall n, exists A, forall D`. The limiting
+conclusion is `exists A, forall D, forall n`. Angel choices are normalized to
+pairs in `Fin (2*p+1)`; safe finite plays are preserved by this encoding. Mathlib
+`Finset.rado_selection` supplies a limiting strategy agreeing on any finite set
+of observations with a sufficiently long-horizon strategy. The observation set
+includes the current visited-history length, ensuring the selected horizon
+covers every round being checked. No finiteness assumption is made on Devil
+choices or on the full space of histories.
+
+For each finite horizon, recursive viability quantifies `forall Devil move,
+exists safe Angel move`. At viable states a chosen move maintains viability.
+At nonviable states a chosen Devil move makes every safe successor nonviable.
+The state-based Devil is converted to the original history-only interface by
+reconstructing its own past selections; `simulatedBurns_play` proves equality
+with the actual burned list. This establishes finite-game determinacy without
+an unsupported swap of strategy quantifiers.
+
+Compactness gives a finite obstruction when AngelWins fails. Finite determinacy
+then gives a single Devil and deadline T. Bounded-speed induction puts every
+safe n-round play in B(np), and this Devil permits only n < T. The positive box
+B(Tp+1) proves the exact original `uniform_confinement` statement. Combining it
+with Theorem 2.4 proves the exact original Theorem 2.7 locally.
+
+The Mathlib source and cache are pinned to the same revision as the mission,
+`0df444a360eaa60ab8c11dca51a86af692955474`. Independent readbacks are recorded in
+`compactness-readbacks.json`; the closed-library axiom report includes both
+`uniform_confinement` and `nice_devil_reduction` with no `sorryAx`.

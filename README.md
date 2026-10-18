@@ -12,37 +12,38 @@ an already published mathematical result; it claims no new mathematical solution
 - An explicit infinite integer-board game with Devil-first rounds, passes,
   history-dependent strategies, survival, Nice Devils, escape, and finite-prefix
   confinement.
-- Fifty-two checked foundational and finite-journey lemmas, including the final arithmetic contradiction
-  used in Proposition 4.3 and a conditional assembly of the two paper milestones.
-  Claim 2.6 and Theorem 2.4 are proved. The uniform confinement argument and
-  geometric escape milestone remain unproved.
-- Three open statements: the Nice Devil reduction (Theorem 2.7, including the
-  introductory determinacy observation), Nice Devil escape (Theorem 4.5), and
-  the main result (Theorem 4.6).
-- The Prove2Me proposal is **In review** after human submission. Its three
-  theorem statements are published and still Open. Open
+- Seventy-four checked theorems. Claim 2.6, Theorem 2.4, uniform confinement,
+  and the original Nice Devil reduction (Theorem 2.7) are proved.
+- The remaining open milestone is power-two escape against Nice Devils
+  (Theorem 4.5). Its geometric estimates and wall-following argument remain
+  unproved; therefore the main result (Theorem 4.6) remains open.
+- The Prove2Me proposal is **In review** after human submission. Its original
+  theorem statements are published; Theorem 2.7 is now Proved. Open
   [Prove2Me](https://prove2.me), then **My missions**, and select
   **The Angel of Power 2 Wins (Mathe)**. Proposal ID:
   `8632c949-8a1d-477d-b87b-ad737965860b`.
 
 ## Reproduce local checks
 
-Install elan and the pinned Lean toolchain, then run:
+Install elan and the pinned Lean toolchain. From a fresh checkout, in PowerShell:
 
-```sh
+```powershell
+$env:MATHLIB_NO_CACHE_ON_UPDATE = '1'
+lake update
+lake exe cache get Mathlib.Combinatorics.Compactness
 python scripts/verify.py
 ```
 
-The initial library uses `Std`, with no external package dependency. Lean is
-pinned to `v4.33.1`; the proposal targets the platform's Mathlib environment
-`0df444a360eaa60ab8c11dca51a86af692955474`. Introducing Mathlib later must preserve
-that pin or deliberately migrate the proposal.
+Lean is pinned to `v4.33.1` and Mathlib to
+`0df444a360eaa60ab8c11dca51a86af692955474`, exactly matching the platform environment.
+The strategy compactness proof uses Mathlib's Rado selection lemma.
 
-The closed library (`Foundation`, `Histories`, `ReducedJourney`, `NiceReduction`, `Confinement`) contains no
-`sorry` placeholders and imports no open theorem statements. The axiom report contains no `sorryAx`. `Theorems/PaperTargets.lean`
-contains **three explicit `sorry` placeholders** and is checked separately for
-statement elaboration only. `Solutions/MainReduction.lean` is checked separately: the platform accepted it
-as `SKETCH_ACCEPTED`, with two open milestone dependencies. It is not a closed proof.
+The closed library is built through `Solutions.FiniteDeterminacy`; it contains
+no `sorry` placeholders, imports no platform theorem placeholders, and has no
+`sorryAx` in its printed axiom dependencies. `Theorems/` files are statement
+reference mirrors and may contain `sorry` even for platform-proved results.
+They are excluded from the closed-library audit. The main platform reduction
+is checked separately; it remains incomplete while Theorem 4.5 is open.
 
 ## Source and audit
 
@@ -57,14 +58,13 @@ as `SKETCH_ACCEPTED`, with two open milestone dependencies. It is not a closed p
 
 The proposal has four items and two milestones. Human submission is complete;
 moderation is pending. The main theorem now has a verified reduction to its two
-open milestones. See [the live main theorem](https://prove2.me/theorems/6204cf5d-3e21-4e77-91ee-856e578b4253)
+milestones, one proved and one open. See [the live main theorem](https://prove2.me/theorems/6204cf5d-3e21-4e77-91ee-856e578b4253)
 and [the recorded graph](verification/main-graph-after.json).
 
-Claim 2.6 and Theorem 2.4 have server verdict **ACCEPTED**. Their proof chain
-is connected to the original main theorem through the accepted Theorem 2.7
-reduction. The graph's remaining open leaves are uniform confinement (Claim 2.1
-plus determinacy) and power-two escape against Nice Devils (Theorem 4.5).
-See [graph audit](verification/section2-graph-audit.md).
+Claim 2.6, Theorem 2.4, finite-survival compactness, finite-game determinacy,
+and uniform confinement have server verdict **ACCEPTED**. The original
+Theorem 2.7 is **Proved** by dependency closure. The main graph now has one
+open leaf: Theorem 4.5. See [current graph audit](verification/compactness-graph-audit.md).
 
 ## Publication convention
 

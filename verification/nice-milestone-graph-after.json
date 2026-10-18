@@ -31,7 +31,7 @@
       "theorem_id": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
       "theorem_name": "AngelDevil.uniform_confinement",
       "theorem_title": "Claim 2.1 and determinacy: a uniform confinement box",
-      "status": "Open",
+      "status": "Proved",
       "formal_statement": "theorem AngelDevil.uniform_confinement (p : Nat) (hp : 0 < p)\n    (h : \u00ac AngelWins p) : \u2203 N, 0 < N \u2227 \u2203 D : DevilStrategy,\n    \u2200 A n, (\u2200 m, m < n \u2192\n      Jump p (current (play A D m)) (current (play A D (m+1))) \u2227\n      some (current (play A D (m+1))) \u2209 (play A D (m+1)).burned) \u2192\n      InBox N (current (play A D n)) := by sorry",
       "natural_language_statement": "For each positive integer power, if no single Angel strategy survives against every Devil, there is a positive integer radius and one Devil strategy such that every safe finite play remains inside that box. The radius and Devil are chosen before the Angel strategy and play length. This target includes the introductory determinacy observation as well as Claim 2.1; neither is assumed as an extra hypothesis.",
       "created_at": "2026-10-18T13:16:21.861571+00:00",
@@ -106,10 +106,36 @@
     },
     {
       "node_type": "theorem",
+      "theorem_id": "755f9736-9c48-4e56-a844-ee7810ff855b",
+      "theorem_name": "AngelDevil.finite_game_determined",
+      "theorem_title": "Finite-horizon Angel-Devil determinacy",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.finite_game_determined (p T : Nat) :\n    FiniteAngelWins p T \u2228 \u2203 D, \u2200 A, \u00ac SafeFor p A D T := by sorry",
+      "natural_language_statement": "For every nonnegative power p and finite horizon T, either one Angel strategy is safe for T rounds against every Devil, or one Devil strategy prevents every Angel strategy from being safe for T rounds. Both strategies use the original history interfaces. At horizon zero the first alternative holds. This is the finite-horizon determinacy step used with compactness in the confinement argument.",
+      "created_at": "2026-10-18T13:36:55.36345+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_FiniteHorizon\nopen AngelDevil",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript pp. 1-2, determinacy observation and Claim 2.1 proof; finite-horizon intermediate statement.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
       "theorem_id": "76719177-828c-4447-b573-06ec5a9f0684",
       "theorem_name": "AngelDevil.nice_devil_reduction",
       "theorem_title": "Theorem 2.7: reduction to a Nice Devil",
-      "status": "Open",
+      "status": "Proved",
       "formal_statement": "theorem AngelDevil.nice_devil_reduction (p : Nat) (hp : 0 < p) : \u00ac AngelDevil.AngelWins p \u2192 \u2203 N, 0 < N \u2227 AngelDevil.NiceCanConfine p N := by sorry",
       "natural_language_statement": "For every positive integer power, if the Angel has no winning strategy, some Nice Devil can keep every finite safe play in a fixed box of positive integer radius. This formulation includes the determinacy observation from the introduction in addition to Theorem 2.7.",
       "created_at": "2026-10-18T12:47:22.151585+00:00",
@@ -211,6 +237,58 @@
     },
     {
       "node_type": "theorem",
+      "theorem_id": "9b05ab5a-6341-49a0-8b72-335a6682a388",
+      "theorem_name": "AngelDevil_FiniteHorizon",
+      "theorem_title": "Finite-horizon safety and bounded Angel moves",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "Safety for n rounds requires every one of the first n jumps to be legal and to avoid all squares selected so far. Finite-horizon winning means one Angel strategy is safe for that horizon against every Devil. Strategy inputs are visited and burned histories. Legal displacements are encoded by pairs of integers from 0 through 2p, translated by minus p in each coordinate. The encoding retains legal choices and replaces illegal choices by staying put.",
+      "created_at": "2026-10-18T13:36:05.422047+00:00",
+      "vote_count": 0,
+      "definition": "import Definitions.Def_AngelDevil_Game\n\nnamespace AngelDevil\n\ndef SafeFor (p : Nat) (A : AngelStrategy) (D : DevilStrategy) (n : Nat) : Prop :=\n  \u2200 m, m < n \u2192\n    Jump p (current (play A D m)) (current (play A D (m+1))) \u2227\n    some (current (play A D (m+1))) \u2209 (play A D (m+1)).burned\n\ndef FiniteAngelWins (p n : Nat) : Prop := \u2203 A, \u2200 D, SafeFor p A D n\n\nabbrev Observation := List Point \u00d7 List (Option Point)\nabbrev BoundedMove (p : Nat) := Fin (2*p+1) \u00d7 Fin (2*p+1)\n\ndef decodeMove (p : Nat) (h : List Point) (d : BoundedMove p) : Point :=\n  ((h.getLastD origin).1 + (d.1.val : Int) - (p : Int),\n   (h.getLastD origin).2 + (d.2.val : Int) - (p : Int))\n\ndef boundedAngel (p : Nat) (f : Observation \u2192 BoundedMove p) : AngelStrategy :=\n  fun h b => decodeMove p h (f (h, b))\n\n/- Invalid off-path choices are replaced by staying put. Legal choices are\nencoded exactly, so this changes no safe finite play. -/\nnoncomputable def encodeAngel (p : Nat) (A : AngelStrategy) :\n    Observation \u2192 BoundedMove p := by\n  classical\n  intro o\n  let v := A o.1 o.2\n  let u := o.1.getLastD origin\n  exact if hv : Jump p u v then\n    (\u27e8(v.1-u.1+(p : Int)).toNat, by unfold Jump at hv; omega\u27e9,\n     \u27e8(v.2-u.2+(p : Int)).toNat, by unfold Jump at hv; omega\u27e9)\n  else (\u27e8p, by omega\u27e9, \u27e8p, by omega\u27e9)\n\nend AngelDevil\n",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript pp. 1-2: determinacy observation and Claim 2.1; auxiliary formalization definitions.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "9ce68653-543f-4f54-ad03-38a632ec30d1",
+      "theorem_name": "AngelDevil.finite_survival_compactness",
+      "theorem_title": "Finite-horizon survival yields an infinite winning strategy",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.finite_survival_compactness (p : Nat)\n    (hf : \u2200 n, FiniteAngelWins p n) : AngelWins p := by sorry",
+      "natural_language_statement": "For any nonnegative integer power, suppose that for every finite number n of rounds there exists an Angel strategy that remains safe for n rounds against every Devil. Then a single Angel strategy remains safe forever against every Devil. The finite strategies may depend on n; the conclusion uses one strategy for all rounds.",
+      "created_at": "2026-10-18T13:36:53.692206+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_FiniteHorizon\nopen AngelDevil",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 2, Claim 2.1 proof: the suitable limit of finite-horizon strategies.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
       "theorem_id": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
       "theorem_name": "AngelDevil.reducedJourney_allowed",
       "theorem_title": "Claim 2.6: allowed journeys remain allowed after reduction",
@@ -278,7 +356,7 @@
       "node_id": "sketch-9650a163-653b-4113-bb8b-d051cf03f583",
       "submission_id": "9650a163-653b-4113-bb8b-d051cf03f583",
       "parent_theorem_id": "76719177-828c-4447-b573-06ec5a9f0684",
-      "status": "SKETCH_ACCEPTED",
+      "status": "ACCEPTED",
       "username": "Yuxuan Xu",
       "explanation": "Theorem 2.7 follows from a uniform confinement box for an unrestricted Devil\n(Claim 2.1 plus the introductory determinacy observation) and the confinement\ntransfer of Theorem 2.4. The latter is proved; the former remains an open target.\nThis submission is a genuine dependency decomposition, not a completed proof\nof Theorem 2.7 while uniform confinement remains open.\n",
       "created_at": "2026-10-18T13:18:39.36848+00:00",
@@ -306,6 +384,18 @@
       "username": "Yuxuan Xu",
       "explanation": "Assuming the two paper milestones, the Angel of power two has a winning strategy.\nThe child statements are open obligations, not conclusions established by this\nsubmission.\n\nSuppose there were no winning power-two Angel strategy. Theorem 2.7, in the\nformulation that includes the introduction's determinacy observation, supplies a\npositive radius and a Nice Devil that confines every finite safe play to that box.\nTheorem 4.5 supplies a single Angel strategy that survives and escapes every box\nagainst every Nice Devil. Apply this strategy to the confining Nice Devil.\n\nIts infinite survival makes each finite prefix safe. Its escape property supplies\na round outside the confining box, while the confinement property places that same\nround inside the box. This contradiction proves the main conclusion conditional\non the two imported milestones. This is the last deduction on manuscript page 8,\nafter Theorem 4.5.\n",
       "created_at": "2026-10-18T12:50:32.286675+00:00",
+      "child_count": 2,
+      "deprecated_at": null
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-e9b369e4-3a61-4f2c-b56b-9dcfcc9f18c0",
+      "submission_id": "e9b369e4-3a61-4f2c-b56b-9dcfcc9f18c0",
+      "parent_theorem_id": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "This proves the original uniform-confinement target, combining the introductory\ndeterminacy observation and Claim 2.1. If the Angel has no infinite winning\nstrategy, finite-survival compactness gives a finite horizon with no universally\nsafe Angel strategy. Finite-game determinacy then gives one Devil forcing\nfailure by that horizon T.\n\nA safe n-round play moves at most np in each coordinate. Under this Devil, any\nsafe prefix must have n < T, so all safe prefixes lie in the positive-radius box\nB(Tp+1). The proof imports and uses the independently verified compactness and\nfinite-determinacy statements, and keeps the original theorem's quantifiers.\n",
+      "created_at": "2026-10-18T13:38:32.684841+00:00",
       "child_count": 2,
       "deprecated_at": null
     }
@@ -339,6 +429,21 @@
     {
       "source": "sketch-9650a163-653b-4113-bb8b-d051cf03f583",
       "target": "76719177-828c-4447-b573-06ec5a9f0684",
+      "kind": "sketch"
+    },
+    {
+      "source": "755f9736-9c48-4e56-a844-ee7810ff855b",
+      "target": "sketch-e9b369e4-3a61-4f2c-b56b-9dcfcc9f18c0",
+      "kind": "sketch"
+    },
+    {
+      "source": "9ce68653-543f-4f54-ad03-38a632ec30d1",
+      "target": "sketch-e9b369e4-3a61-4f2c-b56b-9dcfcc9f18c0",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-e9b369e4-3a61-4f2c-b56b-9dcfcc9f18c0",
+      "target": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
       "kind": "sketch"
     },
     {
@@ -397,6 +502,16 @@
       "kind": "structural"
     },
     {
+      "source": "9b05ab5a-6341-49a0-8b72-335a6682a388",
+      "target": "755f9736-9c48-4e56-a844-ee7810ff855b",
+      "kind": "structural"
+    },
+    {
+      "source": "9b05ab5a-6341-49a0-8b72-335a6682a388",
+      "target": "9ce68653-543f-4f54-ad03-38a632ec30d1",
+      "kind": "structural"
+    },
+    {
       "source": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
       "target": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
       "kind": "structural"
@@ -414,6 +529,11 @@
     {
       "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
       "target": "7f9bf1fe-1d1f-4577-abc5-4386445c58ca",
+      "kind": "structural"
+    },
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "9b05ab5a-6341-49a0-8b72-335a6682a388",
       "kind": "structural"
     }
   ],

@@ -1,0 +1,21 @@
+{
+  "id": "67c0fa9f-7433-456d-8e1b-9997dcc6b732",
+  "kind": "problem",
+  "theorem_name": "AngelDevil.finite_game_determined",
+  "theorem_title": "Finite-horizon Angel-Devil determinacy",
+  "formal_statement": "theorem AngelDevil.finite_game_determined (p T : Nat) :\n    FiniteAngelWins p T \u2228 \u2203 D, \u2200 A, \u00ac SafeFor p A D T := by sorry",
+  "natural_language_statement": "For every nonnegative power p and finite horizon T, either one Angel strategy is safe for T rounds against every Devil, or one Devil strategy prevents every Angel strategy from being safe for T rounds. Both strategies use the original history interfaces. At horizon zero the first alternative holds. This is the finite-horizon determinacy step used with compactness in the confinement argument.",
+  "definitions": "import Definitions.Def_AngelDevil_FiniteHorizon\nopen AngelDevil",
+  "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript pp. 1-2, determinacy observation and Claim 2.1 proof; finite-horizon intermediate statement.",
+  "tags": [
+    "combinatorics",
+    "game-theory",
+    "angel-problem"
+  ],
+  "visibility": "public",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "755f9736-9c48-4e56-a844-ee7810ff855b",
+  "created_at": "2026-10-18T13:36:48.826739+00:00",
+  "updated_at": "2026-10-18T13:36:56.417306+00:00"
+}

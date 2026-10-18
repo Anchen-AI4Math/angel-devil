@@ -1,0 +1,21 @@
+{
+  "id": "200cace2-6b81-4084-adc1-e2d8860d39d2",
+  "kind": "definition",
+  "theorem_name": "AngelDevil_FiniteGame",
+  "theorem_title": "Finite-game viability and history-based counterstrategies",
+  "formal_statement": "",
+  "natural_language_statement": "Finite viability is defined recursively: zero further rounds are always viable; one more round is viable when every optional Devil selection admits a safe Angel landing with a viable remaining state. The finite Angel selects such a landing when one exists. A bad Devil move makes every safe landing nonviable when such a move exists. Burn-history reconstruction turns these state-based choices into a total history-only Devil strategy. Off-path choices and exhausted horizons have explicitly defined defaults.",
+  "definitions": "import Definitions.Def_AngelDevil_FiniteHorizon\n\nnamespace AngelDevil\n\ndef advance (s : State) (d : Option Point) (v : Point) : State :=\n  \u27e8s.visited ++ [v], s.burned ++ [d]\u27e9\n\ndef Viable (p : Nat) : Nat \u2192 State \u2192 Prop\n  | 0, _ => True\n  | n+1, s => \u2200 d : Option Point, \u2203 v : Point,\n      Jump p (current s) v \u2227 some v \u2209 s.burned ++ [d] \u2227\n      Viable p n (advance s d v)\n\nnoncomputable def finiteAngel (p T : Nat) : AngelStrategy := by\n  classical\n  intro h b\n  exact if hv : \u2203 v, Jump p (h.getLastD origin) v \u2227 some v \u2209 b \u2227\n      Viable p (T-h.length) \u27e8h ++ [v], b\u27e9 then Classical.choose hv else origin\n\nnoncomputable def badMove (p n : Nat) (s : State) : Option Point := by\n  classical\n  exact if hd : \u2203 d : Option Point, \u2200 v,\n      Jump p (current s) v \u2192 some v \u2209 s.burned ++ [d] \u2192\n      \u00ac Viable p n (advance s d v) then Classical.choose hd else none\n\n/- Reconstruct a state-dependent Devil's own earlier selections from the\nvisited history. This preserves the mission's history-only Devil interface. -/\ndef simulatedBurns (choose : State \u2192 Option Point) (h : List Point) :\n    List (Option Point) :=\n  if _hnil : h = [] then [] else\n  let prior := h.dropLast\n  if prior = [] then [] else\n  let b := simulatedBurns choose prior\n  b ++ [choose \u27e8prior, b\u27e9]\ntermination_by h.length\ndecreasing_by\n  have hp := List.length_pos_iff.mpr _hnil\n  simp only [List.length_dropLast]\n  omega\n\ndef historyDevil (choose : State \u2192 Option Point) : DevilStrategy :=\n  fun h => choose \u27e8h, simulatedBurns choose h\u27e9\n\nnoncomputable def finiteDevil (p T : Nat) : DevilStrategy :=\n  historyDevil (fun s => badMove p (T-s.visited.length) s)\n\nend AngelDevil\n",
+  "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript pp. 1-2: determinacy observation and Claim 2.1; auxiliary formalization definitions.",
+  "tags": [
+    "combinatorics",
+    "game-theory",
+    "angel-problem"
+  ],
+  "visibility": "public",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "3524c509-2ef4-4572-9b71-7d0a30266b17",
+  "created_at": "2026-10-18T13:36:45.992991+00:00",
+  "updated_at": "2026-10-18T13:36:53.393177+00:00"
+}
