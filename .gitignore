@@ -1,0 +1,17 @@
+.lake/
+tmp/
+credentials.json
+*.pdf
+papers/*.txt
+platform/*search*.json
+platform/search-*.json
+platform/missions.json
+platform/fields.json
+platform/proposal-readback.json
+platform/navigation/
+platform/*SKILL.md
+platform/contribute.md
+platform/lean-setup.md
+platform/mission*.md
+platform/MAINTENANCE.md
+__pycache__/

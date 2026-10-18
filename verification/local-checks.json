@@ -1,0 +1,25 @@
+{
+  "build": {
+    "exit_code": 0
+  },
+  "axioms": {
+    "exit_code": 0
+  },
+  "open-target-elaboration": {
+    "exit_code": 0
+  },
+  "proved_foundation_theorems": [
+    "jump_self",
+    "jump_mono",
+    "jump_symm",
+    "jump_add",
+    "play_lengths",
+    "pass_is_nice",
+    "wall_budget_contradiction",
+    "nice_wins_excludes_confinement",
+    "nice_escape_and_reduction_imply_win"
+  ],
+  "paper_targets_proved": false,
+  "paper_target_placeholders": 3,
+  "toolchain": "leanprover/lean4:v4.33.1"
+}

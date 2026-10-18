@@ -1,0 +1,3 @@
+Theorems/PaperTargets.lean:4:8: warning: declaration uses `sorry`
+Theorems/PaperTargets.lean:7:8: warning: declaration uses `sorry`
+Theorems/PaperTargets.lean:9:8: warning: declaration uses `sorry`
