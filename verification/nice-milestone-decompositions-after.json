@@ -1,0 +1,48 @@
+{
+  "decompositions": [
+    {
+      "submission_id": null,
+      "created_by": null,
+      "created_at": null,
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+          "definition_name": "AngelDevil_Game",
+          "theorem_title": "Angel and Devil: infinite-board game and strategies",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    },
+    {
+      "submission_id": "9650a163-653b-4113-bb8b-d051cf03f583",
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-18T13:18:39.36848+00:00",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "theorem_id": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
+          "theorem_name": "AngelDevil.uniform_confinement",
+          "theorem_title": "Claim 2.1 and determinacy: a uniform confinement box",
+          "status": "Open",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "theorem_id": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+          "theorem_name": "AngelDevil.confinement_to_nice",
+          "theorem_title": "Theorem 2.4: transfer confinement to a Nice Devil",
+          "status": "Proved",
+          "ordinal": 1,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    }
+  ]
+}

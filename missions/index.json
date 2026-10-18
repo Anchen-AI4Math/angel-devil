@@ -8,7 +8,7 @@
       "mission_id": null,
       "proposal_status": "In review",
       "research_status": "formalization-in-progress",
-      "verification_status": "42 local lemmas checked; reduced journey preservation ACCEPTED; main reduction SKETCH_ACCEPTED with two open children",
+      "verification_status": "52 local lemmas checked; Claim 2.6 and Theorem 2.4 ACCEPTED and connected to main graph; uniform confinement and Nice escape remain open",
       "main_theorem_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
       "status_file": "status.md",
       "visibility": "public"

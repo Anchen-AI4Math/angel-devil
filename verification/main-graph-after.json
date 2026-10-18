@@ -3,6 +3,83 @@
   "nodes": [
     {
       "node_type": "theorem",
+      "theorem_id": "09953273-0806-4e9f-a1da-0b10a2292ffb",
+      "theorem_name": "AngelDevil.reducedJourney_is_journey",
+      "theorem_title": "Reduced journeys preserve the movement constraints",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.reducedJourney_is_journey (p : Nat) (h : List AngelDevil.Point) (hj : AngelDevil.Journey p h) : AngelDevil.Journey p (AngelDevil.reducedJourney p h) := by sorry",
+      "natural_language_statement": "For any nonnegative integer power and any finite journey starting at the origin with each coordinate changing by at most that power per step, the earliest-predecessor reduction is again a journey with the same movement constraint. This states the structural validity of the reduction; the separate assertion about avoiding squares eaten by the transformed Devil is not included.",
+      "created_at": "2026-10-18T12:58:13.234791+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_ReducedJourney",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 3, equation (1) and the paragraph immediately following it.",
+      "tags": [
+        "angel-problem",
+        "combinatorics"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
+      "theorem_name": "AngelDevil.uniform_confinement",
+      "theorem_title": "Claim 2.1 and determinacy: a uniform confinement box",
+      "status": "Open",
+      "formal_statement": "theorem AngelDevil.uniform_confinement (p : Nat) (hp : 0 < p)\n    (h : \u00ac AngelWins p) : \u2203 N, 0 < N \u2227 \u2203 D : DevilStrategy,\n    \u2200 A n, (\u2200 m, m < n \u2192\n      Jump p (current (play A D m)) (current (play A D (m+1))) \u2227\n      some (current (play A D (m+1))) \u2209 (play A D (m+1)).burned) \u2192\n      InBox N (current (play A D n)) := by sorry",
+      "natural_language_statement": "For each positive integer power, if no single Angel strategy survives against every Devil, there is a positive integer radius and one Devil strategy such that every safe finite play remains inside that box. The radius and Devil are chosen before the Angel strategy and play length. This target includes the introductory determinacy observation as well as Claim 2.1; neither is assumed as an extra hypothesis.",
+      "created_at": "2026-10-18T13:16:21.861571+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_Game\nopen AngelDevil",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Claim 2.1, p. 2, and the introductory determinacy observation, p. 1.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+      "theorem_name": "AngelDevil.confinement_to_nice",
+      "theorem_title": "Theorem 2.4: transfer confinement to a Nice Devil",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.confinement_to_nice (p N : Nat) (D : DevilStrategy)\n    (hc : \u2200 A n, (\u2200 m, m < n \u2192\n      Jump p (current (play A D m)) (current (play A D (m+1))) \u2227\n      some (current (play A D (m+1))) \u2209 (play A D (m+1)).burned) \u2192\n      InBox N (current (play A D n))) : NiceCanConfine p N  := by sorry",
+      "natural_language_statement": "Let p and N be nonnegative integers. If a Devil strategy keeps every safe finite play of the power-p Angel inside the box of radius N, then some Nice Devil does the same. The assumption ranges over every Angel strategy and every finite time, requiring safety only up to that time. This formalization includes the degenerate cases p = 0 and N = 0 in addition to the positive parameters in the paper.",
+      "created_at": "2026-10-18T13:16:23.740249+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_NiceReduction\nopen AngelDevil",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Theorem 2.4, pp. 2-3, with harmless zero-parameter extension.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
       "theorem_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
       "theorem_name": "AngelDevil.power_two_wins",
       "theorem_title": "Theorem 4.6: the Angel of power two wins",
@@ -55,6 +132,32 @@
     },
     {
       "node_type": "theorem",
+      "theorem_id": "7f9bf1fe-1d1f-4577-abc5-4386445c58ca",
+      "theorem_name": "AngelDevil_ReducedJourney",
+      "theorem_title": "Earliest-predecessor reduction of finite Angel journeys",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "A total recursive implementation of the reduced journey in Mathe Section 2, equation (1). At each endpoint it chooses the earliest reachable predecessor in the original prefix, recursively reduces that prefix, and appends the endpoint. Empty and malformed histories have explicit fallback cases; proved correctness for valid journeys is a separate theorem.",
+      "created_at": "2026-10-18T12:57:20.329816+00:00",
+      "vote_count": 0,
+      "definition": "import Definitions.Def_AngelDevil_Game\n\nnamespace AngelDevil\n\ninstance jumpDecidable (p : Nat) (u v : Point) : Decidable (Jump p u v) := by\n  unfold Jump\n  infer_instance\n\ndef firstReachable (p : Nat) (h : List Point) (z : Point) : Nat :=\n  h.findIdx (fun v => decide (Jump p v z))\n\n/- Section 2, equation (1). The recursive predecessor is the earliest point in\nthe ORIGINAL prefix that can reach the endpoint, not an arbitrary loop erasure.\nThe singleton fallback only specifies a total function on malformed journeys.\n-/\ndef reducedJourney (p : Nat) (h : List Point) : List Point :=\n  if _hnil : h = [] then [] else\n  let z := h.getLastD origin\n  if z = origin then [origin] else\n  let prior := h.dropLast\n  let i := firstReachable p prior z\n  if i < prior.length then\n    reducedJourney p (prior.take (i+1)) ++ [z]\n  else [z]\ntermination_by h.length\ndecreasing_by\n  have hpos : 0 < h.length := List.length_pos_iff.mpr _hnil\n  simp only [List.length_take, List.length_dropLast]\n  omega\n\nend AngelDevil\n\n",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 3, equation (1).",
+      "tags": [
+        "angel-problem",
+        "combinatorics"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false,
+      "missing_children": []
+    },
+    {
+      "node_type": "theorem",
       "theorem_id": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
       "theorem_name": "AngelDevil.power_two_beats_nice_devil",
       "theorem_title": "Theorem 4.5: power two escapes every Nice Devil",
@@ -103,7 +206,96 @@
       "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
       "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
       "has_more_children": false,
+      "has_more_parents": false,
+      "missing_children": []
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+      "theorem_name": "AngelDevil.reducedJourney_allowed",
+      "theorem_title": "Claim 2.6: allowed journeys remain allowed after reduction",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.reducedJourney_allowed (p : Nat) (D : DevilStrategy) (h : List Point)\n    (ha : Allowed p (niceReduction p D) h) : Allowed p D (reducedJourney p h)  := by sorry",
+      "natural_language_statement": "For every nonnegative integer power, every Devil strategy and every finite journey allowed against its Nice transformation, the reduced journey is allowed against the original Devil. Allowedness includes both bounded jumps and avoidance of all earlier Devil selections. The statement also covers power zero.",
+      "created_at": "2026-10-18T13:16:24.741931+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_NiceReduction\nopen AngelDevil",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Claim 2.6, p. 3.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
       "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "theorem_name": "AngelDevil_NiceReduction",
+      "theorem_title": "Nice Devil transformation and allowed finite journeys",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "For a finite history, a square is eligible for a Nice Devil precisely when it is not the origin and is outside the power-p neighbourhood of every position except the last. The transformed Devil applies the original Devil to the reduced history, and retains its selected square exactly when eligible; otherwise it passes. An allowed journey starts at the origin, has legal jumps, and never lands on any square selected by the Devil at an earlier prefix, including the selection immediately before landing.",
+      "created_at": "2026-10-18T13:15:55.582059+00:00",
+      "vote_count": 0,
+      "definition": "import Definitions.Def_AngelDevil_ReducedJourney\n\nnamespace AngelDevil\n\n/- Equation (2): protect the origin and the neighbourhood of every position\nstrictly before the current one. The Devil may still eat the current position\nwhen it is not protected by an earlier position. -/\ndef NiceEligible (p : Nat) (h : List Point) (z : Point) : Prop :=\n  z \u2260 origin \u2227 \u2200 v \u2208 h.dropLast, \u00ac Jump p v z\n\ninstance niceEligibleDecidable (p : Nat) (h : List Point) (z : Point) :\n    Decidable (NiceEligible p h z) := by\n  unfold NiceEligible\n  infer_instance\n\ndef niceReduction (p : Nat) (D : DevilStrategy) : DevilStrategy := fun h =>\n  match D (reducedJourney p h) with\n  | none => none\n  | some z => if NiceEligible p h z then some z else none\n\n/- An allowed finite journey: the Devil acts on prefix i before landing j,\nso all pairs i < j must be checked, not only consecutive moves. -/\ndef Allowed (p : Nat) (D : DevilStrategy) (h : List Point) : Prop :=\n  Journey p h \u2227 \u2200 (i j : Nat) (z : Point), i < j \u2192 h[j]? = some z \u2192\n    D (h.take (i+1)) \u2260 some z\n\nend AngelDevil\n",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Definition 2.5 and following discussion, p. 2; equation (2), p. 3.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "submission_id": "42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "parent_theorem_id": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "This proves the confinement transfer of Mathe's Theorem 2.4, also allowing zero\npower or zero box radius. It uses Claim 2.6 as a published theorem dependency.\n\nFirst, any allowed finite history can be realized by a scripted Angel strategy.\nConversely, every safe prefix of strategy play is an allowed history. This proves\nequivalence of history-based confinement and the finite-safe-prefix confinement\nused by the mission. Apply the original confinement hypothesis to the reduced\nhistory, which is allowed by Claim 2.6. The reduction preserves its endpoint.\nEquation (2) gives a Nice Devil, so its finite safe plays stay in the same box.\n\nNo determinacy or existence of a uniform confinement box is asserted here.\nThose remain separate obligations for Theorem 2.7.\n",
+      "created_at": "2026-10-18T13:18:23.91702+00:00",
+      "child_count": 2,
+      "deprecated_at": null
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-9650a163-653b-4113-bb8b-d051cf03f583",
+      "submission_id": "9650a163-653b-4113-bb8b-d051cf03f583",
+      "parent_theorem_id": "76719177-828c-4447-b573-06ec5a9f0684",
+      "status": "SKETCH_ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "Theorem 2.7 follows from a uniform confinement box for an unrestricted Devil\n(Claim 2.1 plus the introductory determinacy observation) and the confinement\ntransfer of Theorem 2.4. The latter is proved; the former remains an open target.\nThis submission is a genuine dependency decomposition, not a completed proof\nof Theorem 2.7 while uniform confinement remains open.\n",
+      "created_at": "2026-10-18T13:18:39.36848+00:00",
+      "child_count": 2,
+      "deprecated_at": null
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-97eeb292-fd7e-40ce-9b4b-c045518e225a",
+      "submission_id": "97eeb292-fd7e-40ce-9b4b-c045518e225a",
+      "parent_theorem_id": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "This proves Mathe's Claim 2.6 using the equation (2) transformation.\n\nInduct along the recursive earliest-predecessor construction. Every nonempty\nprefix of a reduced journey is the reduction of some original prefix. If the\nlast vertex is not the origin, every original position strictly before its\nearliest predecessor is too far away to protect that last vertex under the\nNice filter. A Devil selection of this last vertex on any reduced prefix would\ntherefore also be made by the transformed Devil on the corresponding original\nprefix, contradicting allowedness. Earlier reduced landings are handled by the\ninduction hypothesis. Origin-ending histories reduce to a singleton.\n\nThe submitted proof imports and uses the published preservation-of-Journey\ntheorem `09953273-0806-4e9f-a1da-0b10a2292ffb`. The closed local proof also builds\nindependently without importing any open platform theorem placeholders.\n",
+      "created_at": "2026-10-18T13:16:52.667424+00:00",
+      "child_count": 2,
+      "deprecated_at": null
     },
     {
       "node_type": "sketch",
@@ -135,6 +327,51 @@
       "kind": "sketch"
     },
     {
+      "source": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
+      "target": "sketch-9650a163-653b-4113-bb8b-d051cf03f583",
+      "kind": "sketch"
+    },
+    {
+      "source": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+      "target": "sketch-9650a163-653b-4113-bb8b-d051cf03f583",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-9650a163-653b-4113-bb8b-d051cf03f583",
+      "target": "76719177-828c-4447-b573-06ec5a9f0684",
+      "kind": "sketch"
+    },
+    {
+      "source": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+      "target": "sketch-42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "kind": "sketch"
+    },
+    {
+      "source": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "target": "sketch-42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "target": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+      "kind": "sketch"
+    },
+    {
+      "source": "09953273-0806-4e9f-a1da-0b10a2292ffb",
+      "target": "sketch-97eeb292-fd7e-40ce-9b4b-c045518e225a",
+      "kind": "sketch"
+    },
+    {
+      "source": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "target": "sketch-97eeb292-fd7e-40ce-9b4b-c045518e225a",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-97eeb292-fd7e-40ce-9b4b-c045518e225a",
+      "target": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+      "kind": "sketch"
+    },
+    {
       "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
       "target": "6204cf5d-3e21-4e77-91ee-856e578b4253",
       "kind": "structural"
@@ -147,6 +384,36 @@
     {
       "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
       "target": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+      "kind": "structural"
+    },
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
+      "kind": "structural"
+    },
+    {
+      "source": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "target": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+      "kind": "structural"
+    },
+    {
+      "source": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "target": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+      "kind": "structural"
+    },
+    {
+      "source": "7f9bf1fe-1d1f-4577-abc5-4386445c58ca",
+      "target": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "kind": "structural"
+    },
+    {
+      "source": "7f9bf1fe-1d1f-4577-abc5-4386445c58ca",
+      "target": "09953273-0806-4e9f-a1da-0b10a2292ffb",
+      "kind": "structural"
+    },
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "7f9bf1fe-1d1f-4577-abc5-4386445c58ca",
       "kind": "structural"
     }
   ],

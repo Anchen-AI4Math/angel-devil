@@ -198,4 +198,63 @@ theorem firstReachable_excludes_earlier (p : Nat) (h : List Point) (z v : Point)
   have hh := firstReachable_minimal p h z j (by omega)
   simpa only [he] using hh
 
+theorem take_dropLast_of_le (h : List Point) (k : Nat) (hk : k ≤ h.length-1) :
+    h.dropLast.take k = h.take k := by
+  rw [List.dropLast_eq_take, List.take_take, Nat.min_eq_left hk]
+
+/- Every nonempty reduced prefix is itself the reduction of an original prefix.
+The witness is an index in the original history, not a reduced-list index. -/
+theorem reducedJourney_prefix (p : Nat) (h : List Point) (s : Nat)
+    (hs : s < (reducedJourney p h).length) :
+    ∃ k, k < h.length ∧
+      reducedJourney p (h.take (k+1)) = (reducedJourney p h).take (s+1) := by
+  induction h using reducedJourney.induct p generalizing s with
+  | case1 => simp [reducedJourney_nil] at hs
+  | case2 h hne z hz =>
+      have hr := reducedJourney_return p h hne hz
+      rw [hr] at hs ⊢
+      have : s = 0 := by simpa using hs
+      subst s
+      have hl := List.length_pos_iff.mpr hne
+      refine ⟨h.length-1, by omega, ?_⟩
+      rw [show h.length-1+1 = h.length by omega, List.take_length, hr]
+      rfl
+  | case3 h hne z hz prior i hi ih =>
+      dsimp only [z, prior, i] at hz hi ih
+      let q := h.dropLast.take (firstReachable p h.dropLast (h.getLastD origin)+1)
+      have hr : reducedJourney p h = reducedJourney p q ++ [h.getLastD origin] := by
+        rw [reducedJourney]
+        simp only [hne, ↓reduceDIte, hz, ↓reduceIte, hi, q]
+      rw [hr] at hs ⊢
+      by_cases hs' : s < (reducedJourney p q).length
+      · obtain ⟨k, hk, he⟩ := ih s hs'
+        simp only [List.length_take] at hk
+        have hk' : k+1 ≤ firstReachable p h.dropLast (h.getLastD origin)+1 := by
+          omega
+        have hlen : firstReachable p h.dropLast (h.getLastD origin) < h.length-1 := by
+          simpa only [List.length_dropLast] using hi
+        refine ⟨k, by omega, ?_⟩
+        rw [List.take_append_of_le_length (by omega)]
+        simpa only [List.take_take, Nat.min_eq_left hk',
+          take_dropLast_of_le h (k+1) (by omega)] using he
+      · have hl := List.length_pos_iff.mpr hne
+        have he : s+1 = (reducedJourney p q ++ [h.getLastD origin]).length := by
+          simp only [List.length_append, List.length_singleton] at hs ⊢
+          omega
+        refine ⟨h.length-1, by omega, ?_⟩
+        rw [show h.length-1+1 = h.length by omega, List.take_length, hr, he,
+          List.take_length]
+  | case4 h hne z hz prior i hbad =>
+      dsimp only [z, prior, i] at hz hbad
+      have hr : reducedJourney p h = [h.getLastD origin] := by
+        rw [reducedJourney]
+        simp only [hne, ↓reduceDIte, hz, ↓reduceIte, hbad]
+      rw [hr] at hs ⊢
+      have : s = 0 := by simpa using hs
+      subst s
+      have hl := List.length_pos_iff.mpr hne
+      refine ⟨h.length-1, by omega, ?_⟩
+      rw [show h.length-1+1 = h.length by omega, List.take_length, hr]
+      rfl
+
 end AngelDevil

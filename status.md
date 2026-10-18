@@ -1,27 +1,33 @@
 # Status — 2026-10-18
 
-- Research: formalization of a published 2007 theorem; no new mathematical result claimed.
-- Source: author manuscript downloaded, 9 pages, checksum recorded.
-- Local verification: 42 foundational and finite-journey lemmas compile on Lean 4.33.1;
-  printed axiom dependencies contain no `sorryAx`.
-- Main result: **open**. Both core paper milestones remain open.
-- Prove2Me: proposal `8632c949-8a1d-477d-b87b-ad737965860b`, **In review**;
-  human submission is complete, moderation pending. All four original items published.
-- Main theorem: `6204cf5d-3e21-4e77-91ee-856e578b4253`.
-- Main reduction: `a7e909c2-b877-43ef-86cf-e400407b697f`, **SKETCH_ACCEPTED**.
-  Graph and decomposition read-backs confirm the two expected open milestone children.
-- Local reduced-journey work: executable earliest-predecessor construction, endpoint
-  preservation, earliest-predecessor bounds, and preservation of valid journeys.
-- Reduced-journey theorem: `09953273-0806-4e9f-a1da-0b10a2292ffb`, server proof **ACCEPTED**; not yet connected to the main graph.
-- Local equation (2) strategy is proved Nice; safe play prefixes are proved Allowed.
+- Research: formalization of Mathe's published 2007 theorem; no new mathematical result claimed.
+- Source: author manuscript downloaded; checksum in `papers/source.json`.
+- Local verification: 52 lemmas compile on Lean 4.33.1 without `sorryAx` in their axiom dependencies.
+- Prove2Me proposal: `8632c949-8a1d-477d-b87b-ad737965860b`, In review after human submission; moderation pending.
+- Main theorem: **open**, `6204cf5d-3e21-4e77-91ee-856e578b4253`.
 - Repository: https://github.com/Anchen-AI4Math/angel-devil (public, main).
 
-## Next work
+## Verified Section 2 results
 
-1. Prove the prefix correspondence and no-shortcut/distinctness invariants for the
-   reduced journey. Then prove Claim 2.6 about allowed play under the transformed Devil.
-2. Use the implemented Nice Devil strategy and Claim 2.6 to prove Theorem 2.4.
-3. Add the compactness/determinacy argument required by the chosen Theorem 2.7 statement.
-4. Encode Claim 4.2 and the wall-following strategy before Proposition 4.3 and Theorem 4.5.
-5. Connect each substantive proved child through real platform reductions, preserving
-   the exact original targets. Completion requires both open milestones to close.
+| Result | Theorem ID | Server proof |
+|---|---|---|
+| Reduced journeys preserve Journey | `09953273-0806-4e9f-a1da-0b10a2292ffb` | ACCEPTED |
+| Claim 2.6: preservation of Allowed | `b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5` | ACCEPTED |
+| Theorem 2.4: confinement transfer | `573ba228-d8a4-41f7-ab55-9aad2fd7f68d` | ACCEPTED |
+
+Theorem 2.4 uses Claim 2.6, which uses the reduced-journey preservation theorem.
+Theorem 2.7 has an accepted sketch using Theorem 2.4 and the still-open uniform
+confinement theorem. All of these edges were read back from the platform;
+see `verification/section2-graph-audit.md`. The local closed library also proves
+these statements independently without importing platform placeholders.
+
+## Remaining open leaves
+
+1. `AngelDevil.uniform_confinement` (`2202ef8d-e4d0-4b0b-81af-3c0549e73536`):
+   positive-power determinacy/compactness and a single finite confinement box.
+2. `AngelDevil.power_two_beats_nice_devil` (`880e0f8b-5ca9-4de7-965e-33979f37fbaf`):
+   Claim 4.2, the wall-following strategy, and the escape proof of Theorem 4.5.
+
+The main reduction and Theorem 2.7 reduction have status SKETCH_ACCEPTED, not
+closed proofs. Full completion requires both remaining leaves to be proved and
+the original main theorem and its graph to be verified closed.

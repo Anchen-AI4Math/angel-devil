@@ -1,0 +1,47 @@
+{
+  "decompositions": [
+    {
+      "submission_id": null,
+      "created_by": null,
+      "created_at": null,
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+          "definition_name": "AngelDevil_NiceReduction",
+          "theorem_title": "Nice Devil transformation and allowed finite journeys",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    },
+    {
+      "submission_id": "42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-18T13:18:23.91702+00:00",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+          "definition_name": "AngelDevil_NiceReduction",
+          "theorem_title": "Nice Devil transformation and allowed finite journeys",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "theorem_id": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+          "theorem_name": "AngelDevil.reducedJourney_allowed",
+          "theorem_title": "Claim 2.6: allowed journeys remain allowed after reduction",
+          "status": "Proved",
+          "ordinal": 1,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    }
+  ]
+}

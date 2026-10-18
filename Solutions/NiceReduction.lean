@@ -89,4 +89,78 @@ theorem safe_prefix_allowed (p : Nat) (A : AngelStrategy) (D : DevilStrategy)
   rw [hj] at hs
   exact hs heaten
 
+theorem endpoint_eligible_at_earlier_prefix (p : Nat) (h : List Point)
+    (hz : h.getLastD origin ≠ origin) (k : Nat)
+    (hi : firstReachable p h.dropLast (h.getLastD origin) < h.dropLast.length)
+    (hk : k ≤ firstReachable p h.dropLast (h.getLastD origin)) :
+    NiceEligible p (h.take (k+1)) (h.getLastD origin) := by
+  refine ⟨hz, ?_⟩
+  intro v hv
+  have hlen : firstReachable p h.dropLast (h.getLastD origin) < h.length-1 := by
+    simpa only [List.length_dropLast] using hi
+  rw [List.dropLast_take (by omega : k+1 < h.length)] at hv
+  simp only [Nat.add_sub_cancel] at hv
+  apply firstReachable_excludes_earlier p h.dropLast (h.getLastD origin) v
+  rw [take_dropLast_of_le h _ (by omega)]
+  exact (List.take_sublist_take_left hk).subset hv
+
+/- Mathe Claim 2.6: the transformed Devil preserves legality on reduction. -/
+theorem reducedJourney_allowed (p : Nat) (D : DevilStrategy) (h : List Point)
+    (ha : Allowed p (niceReduction p D) h) : Allowed p D (reducedJourney p h) := by
+  induction h using reducedJourney.induct p with
+  | case1 => simp [Allowed, Journey] at ha
+  | case2 h hne z hz =>
+      refine ⟨reducedJourney_is_journey p h ha.1, ?_⟩
+      rw [reducedJourney_return p h hne hz]
+      intro s t v hst hv
+      have ht := (List.getElem?_eq_some_iff.mp hv).1
+      simp only [List.length_singleton] at ht
+      omega
+  | case3 h hne z hz prior i hi ih =>
+      dsimp only [z, prior, i] at hz hi ih
+      let a := firstReachable p h.dropLast (h.getLastD origin)
+      let q := h.dropLast.take (a+1)
+      have hlen : a < h.length-1 := by
+        simpa only [List.length_dropLast] using hi
+      have hq : q = h.take (a+1) := take_dropLast_of_le h _ (by omega)
+      have haq : Allowed p (niceReduction p D) q := by
+        rw [hq]
+        exact allowed_take p _ h ha (a+1) (by omega)
+      have hred : Allowed p D (reducedJourney p q) := ih haq
+      have hr : reducedJourney p h = reducedJourney p q ++ [h.getLastD origin] := by
+        rw [reducedJourney]
+        simp only [hne, ↓reduceDIte, hz, ↓reduceIte, hi, q, a]
+      refine ⟨reducedJourney_is_journey p h ha.1, ?_⟩
+      rw [hr]
+      intro s t v hst hv he
+      have ht := (List.getElem?_eq_some_iff.mp hv).1
+      simp only [List.length_append, List.length_singleton] at ht
+      by_cases ht' : t < (reducedJourney p q).length
+      · rw [List.getElem?_append_left ht'] at hv
+        rw [List.take_append_of_le_length (by omega)] at he
+        exact hred.2 s t v hst hv he
+      · have hte : t = (reducedJourney p q).length := by omega
+        rw [List.getElem?_append_right (by omega), hte] at hv
+        simp only [Nat.sub_self, List.getElem?_cons_zero, Option.some.injEq] at hv
+        subst v
+        obtain ⟨k, hk, hprefix⟩ := reducedJourney_prefix p q s (by omega)
+        have hkbound : k ≤ a := by
+          have : q.length ≤ a+1 := by
+            dsimp only [q]
+            rw [List.length_take]
+            exact Nat.min_le_left _ _
+          omega
+        have hprefix' : reducedJourney p (h.take (k+1)) =
+            (reducedJourney p q).take (s+1) := by
+          rw [hq, List.take_take, Nat.min_eq_left (by omega : k+1 ≤ a+1)] at hprefix
+          simpa only [hq] using hprefix
+        rw [List.take_append_of_le_length (by omega), ← hprefix'] at he
+        have hn : niceReduction p D (h.take (k+1)) = some (h.getLastD origin) := by
+          apply (niceReduction_eq_some_iff p D _ _).mpr
+          exact ⟨he, endpoint_eligible_at_earlier_prefix p h hz k hi hkbound⟩
+        exact ha.2 k (h.length-1) (h.getLastD origin) (by omega)
+          (last_lookup h hne) hn
+  | case4 h hne z hz prior i hbad =>
+      exact False.elim (hbad (journey_last_has_predecessor p h ha.1 hz))
+
 end AngelDevil

@@ -31,14 +31,14 @@ read-backs with the source before uploading the proposal.
 ## Proven increment versus open obligations
 
 The initial increment had nine elementary foundations. The current closed library
-has 42 checked lemmas; reduced journeys preserve Journey, and equation (2)
-produces a Nice strategy. Claim 2.6 (preservation of Allowed) remains unproved. `wall_budget_contradiction`
+has 52 checked lemmas. Claim 2.6 (preservation of Allowed) and Theorem 2.4
+(transfer of confinement) are locally proved without open imports. `wall_budget_contradiction`
 proves only the integer-arithmetic incompatibility of the four estimates used
 at the end of Proposition 4.3. It does not establish the geometric estimates.
 `nice_escape_and_reduction_imply_win` assumes both milestones, so it does not
 constitute an unconditional proof of the main theorem.
 
-Remaining work includes strategic determinacy/compactness, the allowed-journey reduction (Claim 2.6), connected-square perimeter estimates, and a precise wall-following
+Remaining work includes strategic determinacy/compactness, connected-square perimeter estimates, and a precise wall-following
 strategy with its escape proof. The square-boundary and intermediate geometric
 claims are not yet encoded as standalone proposal items. The current two
 milestones are large, faithful targets that require that additional work.
@@ -50,3 +50,27 @@ Checked API v0.12.7 on 2026-10-18. Quoted searches for `Nice Devil` and
 risk-control entries. Exact new declaration-name checks found no duplicates.
 This is a bounded keyword check, not an exhaustive proof that no equivalent
 formalization exists anywhere on the platform. Raw search responses remain local.
+
+## Section 2 proof audit
+
+`reducedJourney_prefix` locates each nonempty reduced prefix in an original
+prefix. Its witness need not be the earliest occurrence of that endpoint; the
+recursive bound suffices. For the final reduced landing, all such witnesses
+are at or before its earliest predecessor. Equation (2) cannot suppress that
+landing square there, since all tested positions are strictly earlier than the
+earliest predecessor. Earlier reduced landings are handled recursively. This
+proves Claim 2.6 without needing a separate pairwise-distinctness lemma.
+
+`Allowed` forbids every earlier Devil selection at each landing, not only the
+immediately preceding selection. Its prefix closure and its correspondence
+with safe strategy play are proved. A scripted Angel realizes any given finite
+journey. Together these establish `confinement_iff_allowed`, closing the
+interface between the paper's history presentation and the mission's
+strategy-quantified finite-prefix definition.
+
+`confinement_to_nice` proves Theorem 2.4 with the original radius, including
+zero-power/zero-radius cases. See `section2-readbacks.json` for the independent
+readback. The separate `uniform_confinement` target retains both the absence
+of an Angel winning strategy and the uniform choice of one radius and one
+Devil before all Angels and times. It remains unproved; determinacy is not
+introduced as an extra hypothesis or axiom.

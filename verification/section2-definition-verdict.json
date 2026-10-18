@@ -1,0 +1,21 @@
+{
+  "id": "511674de-0a36-4f89-be14-51881cfafddb",
+  "kind": "definition",
+  "theorem_name": "AngelDevil_NiceReduction",
+  "theorem_title": "Nice Devil transformation and allowed finite journeys",
+  "formal_statement": "",
+  "natural_language_statement": "For a finite history, a square is eligible for a Nice Devil precisely when it is not the origin and is outside the power-p neighbourhood of every position except the last. The transformed Devil applies the original Devil to the reduced history, and retains its selected square exactly when eligible; otherwise it passes. An allowed journey starts at the origin, has legal jumps, and never lands on any square selected by the Devil at an earlier prefix, including the selection immediately before landing.",
+  "definitions": "import Definitions.Def_AngelDevil_ReducedJourney\n\nnamespace AngelDevil\n\n/- Equation (2): protect the origin and the neighbourhood of every position\nstrictly before the current one. The Devil may still eat the current position\nwhen it is not protected by an earlier position. -/\ndef NiceEligible (p : Nat) (h : List Point) (z : Point) : Prop :=\n  z \u2260 origin \u2227 \u2200 v \u2208 h.dropLast, \u00ac Jump p v z\n\ninstance niceEligibleDecidable (p : Nat) (h : List Point) (z : Point) :\n    Decidable (NiceEligible p h z) := by\n  unfold NiceEligible\n  infer_instance\n\ndef niceReduction (p : Nat) (D : DevilStrategy) : DevilStrategy := fun h =>\n  match D (reducedJourney p h) with\n  | none => none\n  | some z => if NiceEligible p h z then some z else none\n\n/- An allowed finite journey: the Devil acts on prefix i before landing j,\nso all pairs i < j must be checked, not only consecutive moves. -/\ndef Allowed (p : Nat) (D : DevilStrategy) (h : List Point) : Prop :=\n  Journey p h \u2227 \u2200 (i j : Nat) (z : Point), i < j \u2192 h[j]? = some z \u2192\n    D (h.take (i+1)) \u2260 some z\n\nend AngelDevil\n",
+  "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Definition 2.5 and following discussion, p. 2; equation (2), p. 3.",
+  "tags": [
+    "combinatorics",
+    "game-theory",
+    "angel-problem"
+  ],
+  "visibility": "public",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+  "created_at": "2026-10-18T13:15:49.00929+00:00",
+  "updated_at": "2026-10-18T13:15:55.945197+00:00"
+}

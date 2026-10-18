@@ -12,9 +12,10 @@ an already published mathematical result; it claims no new mathematical solution
 - An explicit infinite integer-board game with Devil-first rounds, passes,
   history-dependent strategies, survival, Nice Devils, escape, and finite-prefix
   confinement.
-- Forty-two checked foundational and finite-journey lemmas, including the final arithmetic contradiction
+- Fifty-two checked foundational and finite-journey lemmas, including the final arithmetic contradiction
   used in Proposition 4.3 and a conditional assembly of the two paper milestones.
-  The geometric estimates and the two milestones themselves remain unproved.
+  Claim 2.6 and Theorem 2.4 are proved. The uniform confinement argument and
+  geometric escape milestone remain unproved.
 - Three open statements: the Nice Devil reduction (Theorem 2.7, including the
   introductory determinacy observation), Nice Devil escape (Theorem 4.5), and
   the main result (Theorem 4.6).
@@ -37,7 +38,7 @@ pinned to `v4.33.1`; the proposal targets the platform's Mathlib environment
 `0df444a360eaa60ab8c11dca51a86af692955474`. Introducing Mathlib later must preserve
 that pin or deliberately migrate the proposal.
 
-The closed library (`Foundation`, `Histories`, `ReducedJourney`, `NiceReduction`) contains no
+The closed library (`Foundation`, `Histories`, `ReducedJourney`, `NiceReduction`, `Confinement`) contains no
 `sorry` placeholders and imports no open theorem statements. The axiom report contains no `sorryAx`. `Theorems/PaperTargets.lean`
 contains **three explicit `sorry` placeholders** and is checked separately for
 statement elaboration only. `Solutions/MainReduction.lean` is checked separately: the platform accepted it
@@ -59,19 +60,13 @@ moderation is pending. The main theorem now has a verified reduction to its two
 open milestones. See [the live main theorem](https://prove2.me/theorems/6204cf5d-3e21-4e77-91ee-856e578b4253)
 and [the recorded graph](verification/main-graph-after.json).
 
-The earliest-predecessor reduction now preserves valid finite journeys in Lean.
-This is structural groundwork for Claim 2.6, not yet its assertion about eaten
-squares under the transformed Devil. The finite-prefix correspondence, strategy
-reduction, determinacy argument and geometric escape proof remain to be completed.
+Claim 2.6 and Theorem 2.4 have server verdict **ACCEPTED**. Their proof chain
+is connected to the original main theorem through the accepted Theorem 2.7
+reduction. The graph's remaining open leaves are uniform confinement (Claim 2.1
+plus determinacy) and power-two escape against Nice Devils (Theorem 4.5).
+See [graph audit](verification/section2-graph-audit.md).
 
 ## Publication convention
 
 Formalization of already public work is public by default. Original mathematical
 results must stay private until the owner explicitly authorizes publication.
-
-The reduced-journey preservation theorem has server verdict `ACCEPTED` (submission
-`b5e68d92-4b5a-41c1-bd2c-27a41a0c3b4d`); see
-[verdict](verification/reduced-journey-verdict.json). This independent structural
-lemma is not yet connected to the main graph. Additional local proofs establish
-order-preserving deletion, the Nice property of equation (2), and the bridge from
-safe play prefixes to allowed finite journeys. Claim 2.6 itself remains open.

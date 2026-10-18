@@ -1,0 +1,17 @@
+{
+  "claim-2-6": {
+    "theorem_name": "AngelDevil.reducedJourney_allowed",
+    "formal_statement": "theorem AngelDevil.reducedJourney_allowed (p : Nat) (D : DevilStrategy) (h : List Point)\n    (ha : Allowed p (niceReduction p D) h) : Allowed p D (reducedJourney p h)  := by sorry",
+    "preamble": "import Definitions.Def_AngelDevil_NiceReduction\nopen AngelDevil"
+  },
+  "theorem-2-4": {
+    "theorem_name": "AngelDevil.confinement_to_nice",
+    "formal_statement": "theorem AngelDevil.confinement_to_nice (p N : Nat) (D : DevilStrategy)\n    (hc : \u2200 A n, (\u2200 m, m < n \u2192\n      Jump p (current (play A D m)) (current (play A D (m+1))) \u2227\n      some (current (play A D (m+1))) \u2209 (play A D (m+1)).burned) \u2192\n      InBox N (current (play A D n))) : NiceCanConfine p N  := by sorry",
+    "preamble": "import Definitions.Def_AngelDevil_NiceReduction\nopen AngelDevil"
+  },
+  "uniform-confinement": {
+    "theorem_name": "AngelDevil.uniform_confinement",
+    "preamble": "import Definitions.Def_AngelDevil_Game\nopen AngelDevil",
+    "formal_statement": "theorem AngelDevil.uniform_confinement (p : Nat) (hp : 0 < p)\n    (h : \u00ac AngelWins p) : \u2203 N, 0 < N \u2227 \u2203 D : DevilStrategy,\n    \u2200 A n, (\u2200 m, m < n \u2192\n      Jump p (current (play A D m)) (current (play A D (m+1))) \u2227\n      some (current (play A D (m+1))) \u2209 (play A D (m+1)).burned) \u2192\n      InBox N (current (play A D n)) := by sorry"
+  }
+}
