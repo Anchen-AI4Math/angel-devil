@@ -9,16 +9,16 @@ sys.stdout.reconfigure(encoding='utf-8')
 root = Path(__file__).resolve().parents[1]
 out = root / 'verification'
 out.mkdir(exist_ok=True)
-closed_modules = ['Foundation', 'Histories', 'ReducedJourney', 'NiceReduction', 'Confinement', 'FiniteHorizon', 'StrategyCompactness', 'FiniteDeterminacy', 'SquareBoundary']
+closed_modules = ['Foundation', 'Histories', 'ReducedJourney', 'NiceReduction', 'Confinement', 'FiniteHorizon', 'StrategyCompactness', 'FiniteDeterminacy', 'SquareBoundary', 'WallWalk', 'WallStrategy']
 names = []
 for module in closed_modules:
     source = (root/'Solutions'/(module+'.lean')).read_text(encoding='utf-8-sig')
     names.extend(re.findall(r'^theorem (\w+)', source, re.MULTILINE))
 audit = root / 'tmp' / 'Audit.lean'
 audit.parent.mkdir(exist_ok=True)
-audit.write_text('import Solutions.FiniteDeterminacy\nimport Solutions.SquareBoundary\n' + '\n'.join(
+audit.write_text('import Solutions.FiniteDeterminacy\nimport Solutions.SquareBoundary\nimport Solutions.WallStrategy\n' + '\n'.join(
     '#print axioms AngelDevil.' + n for n in names) + '\n', encoding='utf-8')
-commands = [('build', ['lake', 'build', 'Solutions.FiniteDeterminacy', 'Solutions.SquareBoundary']),
+commands = [('build', ['lake', 'build', 'Solutions.FiniteDeterminacy', 'Solutions.SquareBoundary', 'Solutions.WallStrategy']),
             ('axioms', ['lake', 'env', 'lean', str(audit)]),
             ('open-target-elaboration', ['lake', 'env', 'lean', 'Theorems/PaperTargets.lean'])]
 results = {}

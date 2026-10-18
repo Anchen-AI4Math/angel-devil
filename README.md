@@ -12,13 +12,18 @@ an already published mathematical result; it claims no new mathematical solution
 - An explicit infinite integer-board game with Devil-first rounds, passes,
   history-dependent strategies, survival, Nice Devils, escape, and finite-prefix
   confinement.
-- Eighty-nine checked theorems. Claim 2.6, Theorem 2.4, uniform confinement,
+- 123 checked theorems. Claim 2.6, Theorem 2.4, uniform confinement,
   and the original Nice Devil reduction (Theorem 2.7) are proved.
 - Claim 4.2 (connected-square perimeter at most 2n+2) is proved locally
   and ACCEPTED on Prove2Me; its use in the runner proof remains to be built.
-- The remaining open milestone is power-two escape against Nice Devils
-  (Theorem 4.5). Its wall-following argument and escape estimates remain
-  unproved; therefore the main result (Theorem 4.6) remains open.
+- The explicit wall-following strategy, survival against every Nice Devil,
+  persistence of used squares, and the first-repeat argument are proved.
+  Nonreturn of its initial directed wall implies unbounded escape.
+- The no-return-to-winning implication is ACCEPTED on Prove2Me; its verified
+  reduction connects the original Theorem 4.5 to the geometric open child.
+  See [graph audit](verification/wall-graph-audit.md).
+- The remaining geometric obligation is to prove that this trace never returns
+  to its initial wall. Theorem 4.5 and the main result (Theorem 4.6) remain open.
 - The Prove2Me proposal is **In review** after human submission. Its original
   theorem statements are published; Theorem 2.7 is now Proved. Open
   [Prove2Me](https://prove2.me), then **My missions**, and select

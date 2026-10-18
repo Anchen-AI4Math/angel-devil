@@ -1,0 +1,21 @@
+{
+  "id": "7f25fab6-0b78-4f3a-b8bf-2b13d2f3a79b",
+  "kind": "problem",
+  "theorem_name": "AngelDevil.niceAngelWins_of_wall_no_return",
+  "theorem_title": "No-return of the wall trace implies the Nice Angel theorem",
+  "formal_statement": "theorem AngelDevil.niceAngelWins_of_wall_no_return (hreturn : \u2200 D, AngelDevil.Nice 2 D \u2192 \u2200 n, 0 < n \u2192 AngelDevil.wallTrace D n \u2260 AngelDevil.initialWall) : AngelDevil.NiceAngelWins 2 := by sorry",
+  "natural_language_statement": "Assume that against every Nice Devil, the specified two-transition wall trace never returns to its initial directed wall at a positive index. Then there is one power-two Angel strategy that survives against every Nice Devil and, against each such Devil, leaves every finite box centered at the origin. The no-return premise is an explicit geometric assumption; this conditional theorem does not by itself establish that premise.",
+  "definitions": "import Definitions.Def_AngelDevil_WallWalk",
+  "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303; author manuscript pp. 6-8, octagonal wall-following rule, Claim 3.1 analogue, Proposition 4.3 and Theorem 4.5. Two wall transitions per turn give an admissible power-two implementation; no-return is the remaining geometric obligation.",
+  "tags": [
+    "angel-problem",
+    "combinatorics",
+    "game-theory"
+  ],
+  "visibility": "public",
+  "status": "PUBLISHED",
+  "error_message": "",
+  "theorem_id": "3ec0f8c7-bca2-454f-9f1f-e43728a98359",
+  "created_at": "2026-10-18T14:13:41.650264+00:00",
+  "updated_at": "2026-10-18T14:13:54.304885+00:00"
+}

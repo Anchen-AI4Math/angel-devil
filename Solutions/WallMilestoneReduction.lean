@@ -1,0 +1,5 @@
+import Theorems.Thm_AngelDevil_niceAngelWins_of_wall_no_return
+import Theorems.Thm_AngelDevil_wallTrace_never_returns
+
+theorem solution : AngelDevil.NiceAngelWins 2 :=
+  AngelDevil.niceAngelWins_of_wall_no_return AngelDevil.wallTrace_never_returns

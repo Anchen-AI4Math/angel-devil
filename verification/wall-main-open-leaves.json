@@ -1,0 +1,12 @@
+{
+  "root_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+  "open_leaves": [
+    {
+      "theorem_id": "775a4edf-d28a-4a62-89b2-2c5de5c2feaf",
+      "theorem_name": "AngelDevil.wallTrace_never_returns",
+      "status": "Open",
+      "closability": 0
+    }
+  ],
+  "total": 1
+}

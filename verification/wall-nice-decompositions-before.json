@@ -1,0 +1,21 @@
+{
+  "decompositions": [
+    {
+      "submission_id": null,
+      "created_by": null,
+      "created_at": null,
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+          "definition_name": "AngelDevil_Game",
+          "theorem_title": "Angel and Devil: infinite-board game and strategies",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    }
+  ]
+}

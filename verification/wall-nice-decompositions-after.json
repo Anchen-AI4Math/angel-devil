@@ -1,0 +1,48 @@
+{
+  "decompositions": [
+    {
+      "submission_id": null,
+      "created_by": null,
+      "created_at": null,
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+          "definition_name": "AngelDevil_Game",
+          "theorem_title": "Angel and Devil: infinite-board game and strategies",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    },
+    {
+      "submission_id": "b8f1dd37-d9a2-4dec-8cd8-df14d87cadd5",
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-18T14:15:14.111302+00:00",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "theorem_id": "3ec0f8c7-bca2-454f-9f1f-e43728a98359",
+          "theorem_name": "AngelDevil.niceAngelWins_of_wall_no_return",
+          "theorem_title": "No-return of the wall trace implies the Nice Angel theorem",
+          "status": "Proved",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "theorem_id": "775a4edf-d28a-4a62-89b2-2c5de5c2feaf",
+          "theorem_name": "AngelDevil.wallTrace_never_returns",
+          "theorem_title": "Geometric no-return for the power-two wall trace",
+          "status": "Open",
+          "ordinal": 1,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    }
+  ]
+}
