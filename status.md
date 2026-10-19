@@ -9,7 +9,7 @@
 - Local verification: 228 theorems checked on Lean 4.33.1, including the exact original targets; only standard axioms, no `sorryAx`.
 - Original power-two theorem: **Proved**, `6204cf5d-3e21-4e77-91ee-856e578b4253`.
 - Platform graph: **zero open leaves**, with the Claim 4.2 → no-return → Theorem 4.5 → main path verified.
-- Prove2Me proposal: `8632c949-8a1d-477d-b87b-ad737965860b`, **Reviewed**. [Unified public mission](https://prove2.me/missions/6ca204ff-f20b-44be-9d36-410667a76662) now targets the complete classification, **Proved**, with 4/4 source milestones completed.
+- Prove2Me proposal: `8632c949-8a1d-477d-b87b-ad737965860b`, **Reviewed**. [Unified public mission](https://prove2.me/missions/Angel-Devil%3A_Complete_Integer-Power_Classification) now targets the complete classification, **Proved**, with 4/4 source milestones completed.
 - Repository: https://github.com/Anchen-AI4Math/angel-devil (public, main).
 
 ## Original Mathe results (unchanged)
@@ -48,3 +48,5 @@ The existing public mission has been upgraded in place to the complete integer-p
 Earlier increment audits are historical; the completion audit is authoritative
 for the current proof and graph status. No new theorem or peer-reviewed
 publication is claimed beyond formalizing the cited existing result.
+
+Mission web-link correction: the public frontend resolves mission names (spaces normalized to underscores), not API UUIDs. The canonical name URL above was verified in the browser on 2026-10-19. API identifiers and proof records are unchanged.

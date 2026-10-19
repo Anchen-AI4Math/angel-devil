@@ -88,7 +88,7 @@ and [implementation/source comparison](verification/wall-source-comparison.md).
 - [Source-to-model audit](verification/source-audit.md) and
   [original independent blind read-backs](verification/readbacks.json).
 - [Local validation](verification/local-checks.json) and [current status](status.md).
-- [Unified Prove2Me mission](https://prove2.me/missions/6ca204ff-f20b-44be-9d36-410667a76662):
+- [Unified Prove2Me mission](https://prove2.me/missions/Angel-Devil%3A_Complete_Integer-Power_Classification):
   **Angel-Devil: Complete Integer-Power Classification**, public, main goal **Proved**.
   The original mission was upgraded in place on 2026-10-19; all four source
   milestones are completed. The original power-two target remains a milestone.
