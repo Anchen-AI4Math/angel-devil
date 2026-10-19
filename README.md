@@ -88,9 +88,10 @@ and [implementation/source comparison](verification/wall-source-comparison.md).
 - [Source-to-model audit](verification/source-audit.md) and
   [original independent blind read-backs](verification/readbacks.json).
 - [Local validation](verification/local-checks.json) and [current status](status.md).
-- Prove2Me proposal `8632c949-8a1d-477d-b87b-ad737965860b` remains **In review**
-  after human submission, with `mission_id: null`. Its published original
-  theorem graph is complete; platform mission moderation is a separate process.
+- Original Prove2Me proposal `8632c949-8a1d-477d-b87b-ad737965860b` is **Reviewed**.
+  Its public mission `6ca204ff-f20b-44be-9d36-410667a76662` is listed with main theorem **Proved**
+  (verified 2026-10-19). The integer-power extension is published as a connected
+  theorem graph; the original mission target remains unchanged.
 
 Formalization of already public work is public by default. Original mathematical
 results must stay private until the owner explicitly authorizes publication.

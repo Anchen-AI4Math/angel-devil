@@ -84,6 +84,8 @@ responses are in `classification-platform/`; the checked summary is
 upstream result. Auxiliary definition imports are recorded separately from
 the mathematical theorem edges above.
 
-The original Prove2Me mission proposal's administrative review is separate
-from these theorem proofs. No new mission launch, journal publication, or
-independent peer review is claimed.
+At the final live check the original proposal was **Reviewed**, and public
+mission `6ca204ff-f20b-44be-9d36-410667a76662` was listed with its original main theorem
+**Proved**. See `classification-platform/proposal-current-state.json` and
+`mission-current-state.json`. This extension did not change the original mission
+target. No journal publication or independent peer review is claimed.

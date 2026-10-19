@@ -5,8 +5,8 @@
       "title": "The Angel of Power 2 Wins (Mathe)",
       "repository": "https://github.com/Anchen-AI4Math/angel-devil",
       "proposal_id": "8632c949-8a1d-477d-b87b-ad737965860b",
-      "mission_id": null,
-      "proposal_status": "In review",
+      "mission_id": "6ca204ff-f20b-44be-9d36-410667a76662",
+      "proposal_status": "Reviewed",
       "research_status": "formalization-complete",
       "verification_status": "228 local theorems checked with standard axioms only; complete integer-power classification Proved; all six extension proofs ACCEPTED; classification graph has zero open leaves",
       "main_theorem_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
@@ -19,7 +19,9 @@
       "power_one_theorem_id": "26888492-cdea-4b37-b3a2-327d25204e18",
       "classification_status": "Proved",
       "classification_audit": "verification/classification-audit.md",
-      "last_verified": "2026-10-19"
+      "last_verified": "2026-10-19",
+      "mission_visibility": "public",
+      "mission_main_status": "Proved"
     }
   ]
 }

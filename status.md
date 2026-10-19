@@ -9,7 +9,7 @@
 - Local verification: 228 theorems checked on Lean 4.33.1, including the exact original targets; only standard axioms, no `sorryAx`.
 - Main theorem: **Proved**, `6204cf5d-3e21-4e77-91ee-856e578b4253`.
 - Platform graph: **zero open leaves**, with the Claim 4.2 → no-return → Theorem 4.5 → main path verified.
-- Prove2Me proposal: `8632c949-8a1d-477d-b87b-ad737965860b`, **In review** after human submission; `mission_id: null`. Administrative moderation remains pending.
+- Prove2Me proposal: `8632c949-8a1d-477d-b87b-ad737965860b`, **Reviewed**. Original public mission `6ca204ff-f20b-44be-9d36-410667a76662` is listed with main theorem **Proved**.
 - Repository: https://github.com/Anchen-AI4Math/angel-devil (public, main).
 
 ## Original Mathe results (unchanged)
@@ -44,7 +44,7 @@ reduction. The definition of the game and the published wall strategy were
 compared against the server and are unchanged.
 
 No mathematical proof obligation remains for the original three targets.
-Mission moderation is still pending and is not represented as completed.
+The original mission is now publicly listed; its proposal status is Reviewed.
 Earlier increment audits are historical; the completion audit is authoritative
 for the current proof and graph status. No new theorem or peer-reviewed
 publication is claimed beyond formalizing the cited existing result.
