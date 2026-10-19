@@ -1,0 +1,6 @@
+{
+  "title": "Section 1.1 (Kutz): the Devil defeats the king",
+  "milestone_description": "Kutz (2004), Chapter 1, Section 1.1, pp. 2–3, describes Berlekamp's king-capture result. In the shared infinite-board game, there exists one ordinary Devil strategy D such that every power-one Angel strategy A fails to survive. The formal statement is existential in D before universal in A. No optimal capture time or illustrated board-size bound is asserted.",
+  "theorem_id": "26888492-cdea-4b37-b3a2-327d25204e18",
+  "sort_order": 0
+}

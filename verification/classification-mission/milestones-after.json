@@ -1,0 +1,66 @@
+{
+  "mission_id": "6ca204ff-f20b-44be-9d36-410667a76662",
+  "pagination": {
+    "limit": 100,
+    "offset": 0,
+    "total": 4
+  },
+  "milestones": [
+    {
+      "id": "1c294a2c-a839-44df-98cc-6b24d5f0ba2d",
+      "title": "Section 1.1 (Kutz): the Devil defeats the king",
+      "milestone_description": "Kutz (2004), Chapter 1, Section 1.1, pp. 2–3, describes Berlekamp's king-capture result. In the shared infinite-board game, there exists one ordinary Devil strategy D such that every power-one Angel strategy A fails to survive. The formal statement is existential in D before universal in A. No optimal capture time or illustrated board-size bound is asserted.",
+      "sort_order": 0,
+      "completed": true,
+      "theorem": {
+        "id": "26888492-cdea-4b37-b3a2-327d25204e18",
+        "theorem_name": "AngelDevil.power_one_devil_wins",
+        "status": "Proved"
+      },
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-19T13:41:09.24457+00:00"
+    },
+    {
+      "id": "55522e11-e1fb-4afd-a347-7bc1d7227d1d",
+      "title": "Theorem 2.7: reduction to a Nice Devil",
+      "milestone_description": "For every positive integer power, if the Angel has no winning strategy, some Nice Devil can keep every finite safe play in a fixed box of positive integer radius. This formulation includes the determinacy observation from the introduction in addition to Theorem 2.7.",
+      "sort_order": 1,
+      "completed": true,
+      "theorem": {
+        "id": "76719177-828c-4447-b573-06ec5a9f0684",
+        "theorem_name": "AngelDevil.nice_devil_reduction",
+        "status": "Proved"
+      },
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-18T19:50:16.500023+00:00"
+    },
+    {
+      "id": "adc491c1-c1c9-4306-a532-94bddd61ec1e",
+      "title": "Theorem 4.5: power two escapes every Nice Devil",
+      "milestone_description": "There exists one power-two Angel strategy that survives against every Nice Devil and, against each such opponent, reaches outside every finite box centred at the origin.",
+      "sort_order": 2,
+      "completed": true,
+      "theorem": {
+        "id": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+        "theorem_name": "AngelDevil.power_two_beats_nice_devil",
+        "status": "Proved"
+      },
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-18T19:50:16.500023+00:00"
+    },
+    {
+      "id": "ce97bdb9-a6d2-44cd-8b1a-cabb08426bd1",
+      "title": "Theorem 4.6 (Mathe): the Angel of power two wins",
+      "milestone_description": "Mathe (2007), Theorem 4.6: the Angel of power 2 wins. There exists a single power-two Angel strategy surviving forever against every ordinary Devil strategy on the infinite integer lattice, with the shared Devil-first and passing conventions. This is the original mission goal, retained as a source milestone under the complete classification.",
+      "sort_order": 3,
+      "completed": true,
+      "theorem": {
+        "id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+        "theorem_name": "AngelDevil.power_two_wins",
+        "status": "Proved"
+      },
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-19T13:41:10.23181+00:00"
+    }
+  ]
+}

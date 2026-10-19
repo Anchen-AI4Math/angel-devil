@@ -7,9 +7,9 @@
 - Extension audit: [classification-audit.md](verification/classification-audit.md).
 - Source: author manuscript downloaded; its checksum was reverified against `papers/source.json`.
 - Local verification: 228 theorems checked on Lean 4.33.1, including the exact original targets; only standard axioms, no `sorryAx`.
-- Main theorem: **Proved**, `6204cf5d-3e21-4e77-91ee-856e578b4253`.
+- Original power-two theorem: **Proved**, `6204cf5d-3e21-4e77-91ee-856e578b4253`.
 - Platform graph: **zero open leaves**, with the Claim 4.2 → no-return → Theorem 4.5 → main path verified.
-- Prove2Me proposal: `8632c949-8a1d-477d-b87b-ad737965860b`, **Reviewed**. Original public mission `6ca204ff-f20b-44be-9d36-410667a76662` is listed with main theorem **Proved**.
+- Prove2Me proposal: `8632c949-8a1d-477d-b87b-ad737965860b`, **Reviewed**. [Unified public mission](https://prove2.me/missions/6ca204ff-f20b-44be-9d36-410667a76662) now targets the complete classification, **Proved**, with 4/4 source milestones completed.
 - Repository: https://github.com/Anchen-AI4Math/angel-devil (public, main).
 
 ## Original Mathe results (unchanged)
@@ -44,7 +44,7 @@ reduction. The definition of the game and the published wall strategy were
 compared against the server and are unchanged.
 
 No mathematical proof obligation remains for the original three targets.
-The original mission is now publicly listed; its proposal status is Reviewed.
+The existing public mission has been upgraded in place to the complete integer-power classification; its original proposal status is Reviewed. Metadata and milestone readbacks are recorded in `verification/classification-mission/`.
 Earlier increment audits are historical; the completion audit is authoritative
 for the current proof and graph status. No new theorem or peer-reviewed
 publication is claimed beyond formalizing the cited existing result.
