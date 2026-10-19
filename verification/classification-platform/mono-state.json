@@ -1,0 +1,23 @@
+{
+  "theorem_id": "2c3d6ee4-b479-4ba2-87ca-270e8e9c8027",
+  "theorem_name": "AngelDevil.angelWins_mono",
+  "theorem_title": "Winning Angel strategies are monotone in power",
+  "status": "Proved",
+  "formal_statement": "theorem AngelDevil.angelWins_mono {p q : Nat} (hpq : p \u2264 q) (h : AngelDevil.AngelWins p) : AngelDevil.AngelWins q := by sorry",
+  "natural_language_statement": "For natural-number powers p \u2264 q, if a single power-p Angel strategy survives against every Devil, then a power-q Angel has a winning strategy as well.\n\nThe game histories and Devil actions are unchanged when only the permitted jump radius increases.",
+  "created_at": "2026-10-19T13:20:42.398014+00:00",
+  "vote_count": 0,
+  "tags": [
+    "angel-problem",
+    "combinatorics",
+    "game-theory"
+  ],
+  "preamble": "import Definitions.Def_AngelDevil_Game",
+  "source": "Andras Mathe, The Angel of power 2 wins (2007), Theorem 4.6 and Section 1 game definition; https://doi.org/10.1017/S0963548306008303. Elementary consequence of the Chebyshev jump rule, not a separately numbered theorem.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "public",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

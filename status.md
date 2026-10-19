@@ -1,14 +1,18 @@
-# Status — 2026-10-18
+# Status — 2026-10-19
 
-- Research: completed formalization of Mathe's published 2007 theorem; no new mathematical result claimed.
+- Research: complete integer-power classification, combining the published king-capture argument and Mathe 2007; no new mathematical result claimed.
+- Classification: `AngelWins p ↔ 2 ≤ p`, **Proved**, `78319c36-be90-44b7-ae39-6f212616b326`.
+- Power one: one Devil defeats every Angel strategy, **Proved**, `26888492-cdea-4b37-b3a2-327d25204e18`.
+- Extension proofs: all six **ACCEPTED**; classification graph has 37 nodes, 66 edges, zero open leaves, and no unexpanded adjacency.
+- Extension audit: [classification-audit.md](verification/classification-audit.md).
 - Source: author manuscript downloaded; its checksum was reverified against `papers/source.json`.
-- Local verification: 185 theorems checked on Lean 4.33.1, including the exact original targets; only standard axioms, no `sorryAx`.
+- Local verification: 228 theorems checked on Lean 4.33.1, including the exact original targets; only standard axioms, no `sorryAx`.
 - Main theorem: **Proved**, `6204cf5d-3e21-4e77-91ee-856e578b4253`.
 - Platform graph: **zero open leaves**, with the Claim 4.2 → no-return → Theorem 4.5 → main path verified.
 - Prove2Me proposal: `8632c949-8a1d-477d-b87b-ad737965860b`, **In review** after human submission; `mission_id: null`. Administrative moderation remains pending.
 - Repository: https://github.com/Anchen-AI4Math/angel-devil (public, main).
 
-## Verified results
+## Original Mathe results (unchanged)
 
 | Result | Theorem ID | Server proof |
 |---|---|---|

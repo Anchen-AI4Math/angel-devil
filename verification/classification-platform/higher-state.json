@@ -1,0 +1,23 @@
+{
+  "theorem_id": "fd3adddf-c5e8-45db-a5ca-d80d9907541d",
+  "theorem_name": "AngelDevil.power_ge_two_wins",
+  "theorem_title": "Every Angel of integer power at least two wins",
+  "status": "Proved",
+  "formal_statement": "theorem AngelDevil.power_ge_two_wins (p : Nat) (hp : 2 \u2264 p) : AngelDevil.AngelWins p := by sorry",
+  "natural_language_statement": "For every integer power p \u2265 2, there exists one Angel strategy that survives forever against every ordinary Devil strategy on the infinite integer lattice.\n\nThe Devil burns at most one square per round; the convention is Devil first, with passing permitted. This is the monotonicity corollary of the power-two theorem.",
+  "created_at": "2026-10-19T13:20:42.240503+00:00",
+  "vote_count": 0,
+  "tags": [
+    "angel-problem",
+    "combinatorics",
+    "game-theory"
+  ],
+  "preamble": "import Definitions.Def_AngelDevil_Game",
+  "source": "Andras Mathe, The Angel of power 2 wins (2007), Theorem 4.6 and Section 1 game definition; https://doi.org/10.1017/S0963548306008303. Monotonicity corollary of Theorem 4.6.",
+  "deprecated_at": null,
+  "deprecated_by": null,
+  "visibility": "public",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "audits": [],
+  "readback": null
+}

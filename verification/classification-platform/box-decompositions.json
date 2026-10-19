@@ -1,0 +1,55 @@
+{
+  "decompositions": [
+    {
+      "submission_id": "3737259d-c150-4d52-9591-1aa190addda5",
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-19T13:22:34.521608+00:00",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "95cbe8ff-d08e-4598-b095-32791652ed58",
+          "definition_name": "AngelDevil_KingGuard",
+          "theorem_title": "Finite line guards and a box invariant for king capture",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "definition_id": "3524c509-2ef4-4572-9b71-7d0a30266b17",
+          "definition_name": "AngelDevil_FiniteGame",
+          "theorem_title": "Finite-game viability and history-based counterstrategies",
+          "ordinal": 1,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "theorem_id": "8799e326-d7d8-4969-9a45-0d8ed06b4322",
+          "theorem_name": "AngelDevil.kingGuard_five_origin",
+          "theorem_title": "Five-burn preparation of a line guard",
+          "status": "Proved",
+          "ordinal": 2,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    },
+    {
+      "submission_id": null,
+      "created_by": null,
+      "created_at": null,
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "95cbe8ff-d08e-4598-b095-32791652ed58",
+          "definition_name": "AngelDevil_KingGuard",
+          "theorem_title": "Finite line guards and a box invariant for king capture",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    }
+  ]
+}

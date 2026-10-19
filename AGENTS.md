@@ -5,7 +5,7 @@ Original mathematical results stay private until the user explicitly authorizes
 publication; do not disclose them through public navigation or platform items.
 
 Work only in this independent topic repository. Read README.md and status.md first.
-Build proven code with `lake build Solutions.Completed`; check reference statements separately with `lake env lean Theorems/PaperTargets.lean`. Never count the latter as proved.
+Build the complete integer-power classification with `lake build Solutions.PowerClassification`; `Solutions.Completed` remains the original Mathe theorem assembly. Audit both with `python scripts/verify.py`. Build original proven code with `lake build Solutions.Completed`; check reference statements separately with `lake env lean Theorems/PaperTargets.lean`. Never count the latter as proved.
 Do not import Theorems/PaperTargets into the proven library. Solutions/MainReduction.lean, Solutions/NiceMilestoneReduction.lean and Solutions/WallMilestoneReduction.lean are tracked platform reductions using reference mirrors and must be checked separately from the closed proof library. Keep source PDFs local and gitignored.
 
 # AI4Math 工作区

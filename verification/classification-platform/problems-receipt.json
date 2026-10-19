@@ -1,0 +1,31 @@
+{
+  "jobs": [
+    {
+      "job_id": "cb01d0e5-b168-4eef-8bfc-fd0e2873414e",
+      "name": "AngelDevil.kingGuard_five_origin"
+    },
+    {
+      "job_id": "06440a66-3a7c-4eb2-bdb4-747d421a3f06",
+      "name": "AngelDevil.king_box_step"
+    },
+    {
+      "job_id": "46e11e25-ba5a-46ee-89c4-da3de3a7bff7",
+      "name": "AngelDevil.angelWins_mono"
+    },
+    {
+      "job_id": "28caced2-952a-4c76-acb6-c16c29f5091b",
+      "name": "AngelDevil.power_ge_two_wins"
+    },
+    {
+      "job_id": "4e3514ce-0d06-41a3-b3ec-bac109851715",
+      "name": "AngelDevil.power_one_devil_wins"
+    },
+    {
+      "job_id": "e514a910-4d36-48dc-80b9-2acb9249c8a9",
+      "name": "AngelDevil.angelWins_iff_two_le"
+    }
+  ],
+  "errors": [],
+  "message": "6/6 problem(s) queued. Poll GET /api/v1/publish-jobs/{job_id} until status is PUBLISHED, FAILED, or ERROR.",
+  "guidelines": "Reminder: write the natural_language_statement like an academic paper, not a Lean dump. Use standard mathematical notation in KaTeX (backslashes doubled in JSON) instead of raw Lean expressions, give context for every variable and symbol, put the main formula in a display-math block, follow it with a short paragraph on the result's mathematical role, keep Lean-specific details in an optional final Formalization Note paragraph, and do not include proof details. Full principles: references/contribute.md#important-principles-of-submit-problemsdefinitions"
+}

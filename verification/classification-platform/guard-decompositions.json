@@ -1,0 +1,21 @@
+{
+  "decompositions": [
+    {
+      "submission_id": null,
+      "created_by": null,
+      "created_at": null,
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "95cbe8ff-d08e-4598-b095-32791652ed58",
+          "definition_name": "AngelDevil_KingGuard",
+          "theorem_title": "Finite line guards and a box invariant for king capture",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    }
+  ]
+}

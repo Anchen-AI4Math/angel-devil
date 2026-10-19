@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-19",
+  "local_theorem_count": 228,
+  "exact_extension_statements_match": true,
+  "all_six_submissions": "ACCEPTED",
+  "all_six_theorems": "Proved",
+  "graph_nodes": 37,
+  "graph_edges": 66,
+  "graph_depth": 10,
+  "open_leaves": 0,
+  "unexpanded_adjacency": false,
+  "verified_dependency_paths": {
+    "box": [
+      "guard"
+    ],
+    "one": [
+      "guard",
+      "box"
+    ],
+    "higher": [
+      "mono",
+      "original_two"
+    ],
+    "classification": [
+      "mono",
+      "one",
+      "higher"
+    ]
+  },
+  "theorem_ids": {
+    "guard": "8799e326-d7d8-4969-9a45-0d8ed06b4322",
+    "box": "933979c6-a215-44e2-b9ef-686e0ccba8dc",
+    "mono": "2c3d6ee4-b479-4ba2-87ca-270e8e9c8027",
+    "higher": "fd3adddf-c5e8-45db-a5ca-d80d9907541d",
+    "one": "26888492-cdea-4b37-b3a2-327d25204e18",
+    "classification": "78319c36-be90-44b7-ae39-6f212616b326",
+    "original_two": "6204cf5d-3e21-4e77-91ee-856e578b4253"
+  },
+  "platform_api_version": "0.13.0",
+  "package_sha256": {
+    "guard": "1670670f05e6e0f4186f14c05eebdf504a5269ea7d5f8c764ee42c4b0cab63ec",
+    "box": "d8cbb034ab2b727533afa6aa1b1ddc2f073585f834fad3638268984cfe6e3d49",
+    "mono": "50b3190df6db9ac99b77a403b114a059f728d6b7732b281f01dad73f490875e4",
+    "higher": "5a116571c8848b16f70d7f57671ca15db2b2a35c28b791f808f5fd099553b02a",
+    "one": "b685fb31ba9ef1cf2c06647b3669e16a7fff987fb7e8bd6873da11d9c1d14c1b",
+    "classification": "0db801861c49bfa4117965a8e88a5561d93ec3843991f23741ad5e2ea3b5b2cd"
+  }
+}

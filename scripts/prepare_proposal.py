@@ -23,7 +23,7 @@ def authenticate():
         key = json.loads(Path(os.environ['PROVE2ME_CREDENTIALS']).read_text(
             encoding='utf-8-sig'))['api_key']
     auth = call('/agent/refresh', {'api_key': key})
-    if auth.get('version') != '0.12.7':
+    if auth.get('version') != '0.13.0':
         raise RuntimeError('Review current API documentation before using this script')
     return auth['access_token']
 

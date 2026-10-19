@@ -1,0 +1,64 @@
+{
+  "decompositions": [
+    {
+      "submission_id": "ce542f0a-304a-4da3-9123-50224a3fb2c0",
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_at": "2026-10-19T13:22:39.173134+00:00",
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "95cbe8ff-d08e-4598-b095-32791652ed58",
+          "definition_name": "AngelDevil_KingGuard",
+          "theorem_title": "Finite line guards and a box invariant for king capture",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "definition_id": "3524c509-2ef4-4572-9b71-7d0a30266b17",
+          "definition_name": "AngelDevil_FiniteGame",
+          "theorem_title": "Finite-game viability and history-based counterstrategies",
+          "ordinal": 1,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "theorem_id": "2c3d6ee4-b479-4ba2-87ca-270e8e9c8027",
+          "theorem_name": "AngelDevil.angelWins_mono",
+          "theorem_title": "Winning Angel strategies are monotone in power",
+          "status": "Proved",
+          "ordinal": 2,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        },
+        {
+          "theorem_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+          "theorem_name": "AngelDevil.power_two_wins",
+          "theorem_title": "Theorem 4.6: the Angel of power two wins",
+          "status": "Proved",
+          "ordinal": 3,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    },
+    {
+      "submission_id": null,
+      "created_by": null,
+      "created_at": null,
+      "deprecated_at": null,
+      "deprecated_by": null,
+      "children": [
+        {
+          "definition_id": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+          "definition_name": "AngelDevil_Game",
+          "theorem_title": "Angel and Devil: infinite-board game and strategies",
+          "ordinal": 0,
+          "deprecated_at": null,
+          "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+        }
+      ]
+    }
+  ]
+}

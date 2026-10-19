@@ -1,0 +1,818 @@
+{
+  "root_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+  "nodes": [
+    {
+      "node_type": "theorem",
+      "theorem_id": "09953273-0806-4e9f-a1da-0b10a2292ffb",
+      "theorem_name": "AngelDevil.reducedJourney_is_journey",
+      "theorem_title": "Reduced journeys preserve the movement constraints",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.reducedJourney_is_journey (p : Nat) (h : List AngelDevil.Point) (hj : AngelDevil.Journey p h) : AngelDevil.Journey p (AngelDevil.reducedJourney p h) := by sorry",
+      "natural_language_statement": "For any nonnegative integer power and any finite journey starting at the origin with each coordinate changing by at most that power per step, the earliest-predecessor reduction is again a journey with the same movement constraint. This states the structural validity of the reduction; the separate assertion about avoiding squares eaten by the transformed Devil is not included.",
+      "created_at": "2026-10-18T12:58:13.234791+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_ReducedJourney",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 3, equation (1) and the paragraph immediately following it.",
+      "tags": [
+        "angel-problem",
+        "combinatorics"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
+      "theorem_name": "AngelDevil.uniform_confinement",
+      "theorem_title": "Claim 2.1 and determinacy: a uniform confinement box",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.uniform_confinement (p : Nat) (hp : 0 < p)\n    (h : \u00ac AngelWins p) : \u2203 N, 0 < N \u2227 \u2203 D : DevilStrategy,\n    \u2200 A n, (\u2200 m, m < n \u2192\n      Jump p (current (play A D m)) (current (play A D (m+1))) \u2227\n      some (current (play A D (m+1))) \u2209 (play A D (m+1)).burned) \u2192\n      InBox N (current (play A D n)) := by sorry",
+      "natural_language_statement": "For each positive integer power, if no single Angel strategy survives against every Devil, there is a positive integer radius and one Devil strategy such that every safe finite play remains inside that box. The radius and Devil are chosen before the Angel strategy and play length. This target includes the introductory determinacy observation as well as Claim 2.1; neither is assumed as an extra hypothesis.",
+      "created_at": "2026-10-18T13:16:21.861571+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_Game\nopen AngelDevil",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Claim 2.1, p. 2, and the introductory determinacy observation, p. 1.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "3ec0f8c7-bca2-454f-9f1f-e43728a98359",
+      "theorem_name": "AngelDevil.niceAngelWins_of_wall_no_return",
+      "theorem_title": "No-return of the wall trace implies the Nice Angel theorem",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.niceAngelWins_of_wall_no_return (hreturn : \u2200 D, AngelDevil.Nice 2 D \u2192 \u2200 n, 0 < n \u2192 AngelDevil.wallTrace D n \u2260 AngelDevil.initialWall) : AngelDevil.NiceAngelWins 2 := by sorry",
+      "natural_language_statement": "Assume that against every Nice Devil, the specified two-transition wall trace never returns to its initial directed wall at a positive index. Then there is one power-two Angel strategy that survives against every Nice Devil and, against each such Devil, leaves every finite box centered at the origin. The no-return premise is an explicit geometric assumption; this conditional theorem does not by itself establish that premise.",
+      "created_at": "2026-10-18T14:13:53.247026+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_WallWalk",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303; author manuscript pp. 6-8, octagonal wall-following rule, Claim 3.1 analogue, Proposition 4.3 and Theorem 4.5. Two wall transitions per turn give an admissible power-two implementation; no-return is the remaining geometric obligation.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "4391822a-6fe3-4195-bbb4-f998a5562061",
+      "theorem_name": "AngelDevil_SquareBoundary",
+      "theorem_title": "Side-connected integer squares and their unit boundary",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "Squares are indexed by integer pairs. The four side neighbors differ by one in exactly one coordinate. A finite set is connected when it is nonempty and any two members can be joined by a finite sequence of side-neighbor steps within the set. Each exposed side is a direction from an occupied square to an unoccupied neighbor. The perimeter counts all such sides, including hole boundaries. The wall set records the occupied square and side direction.",
+      "created_at": "2026-10-18T13:52:27.129242+00:00",
+      "vote_count": 0,
+      "definition": "import Definitions.Def_AngelDevil_Game\nimport Mathlib.Algebra.Order.BigOperators.Group.Finset\nimport Mathlib.Data.Fintype.Prod\n\nnamespace AngelDevil\n\n/-- Four oriented sides of an integer unit square. -/\nabbrev SquareSide := Bool \u00d7 Bool\n\ndef sideNeighbor (v : Point) (d : SquareSide) : Point :=\n  if d.1 then (v.1, v.2 + if d.2 then -1 else 1)\n  else (v.1 + if d.2 then -1 else 1, v.2)\n\ndef oppositeSide (d : SquareSide) : SquareSide := (d.1, !d.2)\n\ndef SquareAdjacent (u v : Point) : Prop := \u2203 d, sideNeighbor u d = v\n\ndef exposedSides (s : Finset Point) (v : Point) : Finset SquareSide :=\n  Finset.univ.filter (fun d => sideNeighbor v d \u2209 s)\n\n/-- Number of unit boundary sides, including sides surrounding holes. -/\ndef squarePerimeter (s : Finset Point) : Nat :=\n  \u2211 v \u2208 s, (exposedSides s v).card\n\ndef SquaresConnected (s : Finset Point) : Prop :=\n  s.Nonempty \u2227 \u2200 a \u2208 s, \u2200 b \u2208 s,\n    Relation.ReflTransGen (fun u v => u \u2208 s \u2227 v \u2208 s \u2227 SquareAdjacent u v) a b\n\n/-- A wall records its occupied square and the direction of its empty neighbor. -/\ndef boundaryWalls (s : Finset Point) : Finset (Point \u00d7 SquareSide) :=\n  s.biUnion (fun v => (exposedSides s v).image (fun d => (v, d)))\n\nend AngelDevil\n",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 6, Definition 4.1 and Claim 4.2.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+      "theorem_name": "AngelDevil.confinement_to_nice",
+      "theorem_title": "Theorem 2.4: transfer confinement to a Nice Devil",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.confinement_to_nice (p N : Nat) (D : DevilStrategy)\n    (hc : \u2200 A n, (\u2200 m, m < n \u2192\n      Jump p (current (play A D m)) (current (play A D (m+1))) \u2227\n      some (current (play A D (m+1))) \u2209 (play A D (m+1)).burned) \u2192\n      InBox N (current (play A D n))) : NiceCanConfine p N  := by sorry",
+      "natural_language_statement": "Let p and N be nonnegative integers. If a Devil strategy keeps every safe finite play of the power-p Angel inside the box of radius N, then some Nice Devil does the same. The assumption ranges over every Angel strategy and every finite time, requiring safety only up to that time. This formalization includes the degenerate cases p = 0 and N = 0 in addition to the positive parameters in the paper.",
+      "created_at": "2026-10-18T13:16:23.740249+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_NiceReduction\nopen AngelDevil",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Theorem 2.4, pp. 2-3, with harmless zero-parameter extension.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "595569d4-9682-4a6c-9967-8e47f242c4c0",
+      "theorem_name": "AngelDevil.connectedSquares_perimeter",
+      "theorem_title": "Claim 4.2: boundary bound for connected squares",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.connectedSquares_perimeter {s : Finset AngelDevil.Point} (h : AngelDevil.SquaresConnected s) : AngelDevil.squarePerimeter s \u2264 2 * s.card + 2 := by sorry",
+      "natural_language_statement": "Let $S$ be a finite nonempty set of integer unit squares, connected by shared sides, and let $P(S)$ count all unit boundary sides, including boundaries of holes. Then\n\n$$P(S) \\le 2|S|+2.$$\n\nThis is the connected-square perimeter estimate used in the wall-counting argument for the Angel strategy.",
+      "created_at": "2026-10-18T13:53:16.879236+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_SquareBoundary",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 6, Definition 4.1 and Claim 4.2.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+      "theorem_name": "AngelDevil.power_two_wins",
+      "theorem_title": "Theorem 4.6: the Angel of power two wins",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.power_two_wins : AngelDevil.AngelWins 2 := by sorry",
+      "natural_language_statement": "There exists a single power-two Angel strategy that makes legal uneaten landings forever against every Devil strategy on the infinite integer lattice, with the Devil moving first and permitted to pass.",
+      "created_at": "2026-10-18T12:47:43.484246+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_Game",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Theorem 4.6, manuscript p. 8.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [
+        {
+          "audit_id": "1146d0b1-de6a-4618-afd5-da02cabfbe31",
+          "reviewer_id": "136472b2-7660-4cad-97ab-bc0d424d2ccd",
+          "reviewer_username": "Shuze Chen",
+          "decision": "confirm",
+          "comment": "Confirmed by the moderator at approval.",
+          "created_at": "2026-10-18T19:50:16.327743+00:00"
+        },
+        {
+          "audit_id": "f22e2ba8-8610-44cb-9106-07d51f138f4f",
+          "reviewer_id": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+          "reviewer_username": "Yuxuan Xu",
+          "decision": "confirm",
+          "comment": "Confirmed by the mission captain (proposal self-audit).",
+          "created_at": "2026-10-18T19:50:16.664164+00:00"
+        }
+      ],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "755f9736-9c48-4e56-a844-ee7810ff855b",
+      "theorem_name": "AngelDevil.finite_game_determined",
+      "theorem_title": "Finite-horizon Angel-Devil determinacy",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.finite_game_determined (p T : Nat) :\n    FiniteAngelWins p T \u2228 \u2203 D, \u2200 A, \u00ac SafeFor p A D T := by sorry",
+      "natural_language_statement": "For every nonnegative power p and finite horizon T, either one Angel strategy is safe for T rounds against every Devil, or one Devil strategy prevents every Angel strategy from being safe for T rounds. Both strategies use the original history interfaces. At horizon zero the first alternative holds. This is the finite-horizon determinacy step used with compactness in the confinement argument.",
+      "created_at": "2026-10-18T13:36:55.36345+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_FiniteHorizon\nopen AngelDevil",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript pp. 1-2, determinacy observation and Claim 2.1 proof; finite-horizon intermediate statement.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "76719177-828c-4447-b573-06ec5a9f0684",
+      "theorem_name": "AngelDevil.nice_devil_reduction",
+      "theorem_title": "Theorem 2.7: reduction to a Nice Devil",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.nice_devil_reduction (p : Nat) (hp : 0 < p) : \u00ac AngelDevil.AngelWins p \u2192 \u2203 N, 0 < N \u2227 AngelDevil.NiceCanConfine p N := by sorry",
+      "natural_language_statement": "For every positive integer power, if the Angel has no winning strategy, some Nice Devil can keep every finite safe play in a fixed box of positive integer radius. This formulation includes the determinacy observation from the introduction in addition to Theorem 2.7.",
+      "created_at": "2026-10-18T12:47:22.151585+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_Game",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Theorem 2.7, manuscript p. 3, with the introductory determinacy observation on p. 1.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [
+        {
+          "audit_id": "c59972af-99d4-4f81-928a-749c6f5ef8b0",
+          "reviewer_id": "136472b2-7660-4cad-97ab-bc0d424d2ccd",
+          "reviewer_username": "Shuze Chen",
+          "decision": "confirm",
+          "comment": "Confirmed by the moderator at approval.",
+          "created_at": "2026-10-18T19:50:16.327743+00:00"
+        },
+        {
+          "audit_id": "3ee58aee-5477-465f-ad34-076bf89a7ccd",
+          "reviewer_id": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+          "reviewer_username": "Yuxuan Xu",
+          "decision": "confirm",
+          "comment": "Confirmed by the mission captain (proposal self-audit).",
+          "created_at": "2026-10-18T19:50:16.664164+00:00"
+        }
+      ],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "775a4edf-d28a-4a62-89b2-2c5de5c2feaf",
+      "theorem_name": "AngelDevil.wallTrace_never_returns",
+      "theorem_title": "Geometric no-return for the power-two wall trace",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.wallTrace_never_returns (D : AngelDevil.DevilStrategy) (hnice : AngelDevil.Nice 2 D) (n : Nat) (hn : 0 < n) : AngelDevil.wallTrace D n \u2260 AngelDevil.initialWall := by sorry",
+      "natural_language_statement": "Against every Nice Devil of power two, the specified boundary-walking strategy never encounters its initial directed wall at any positive wall-transition index. The initial wall is the east side of square (-1,0). The trace uses two wall transitions per Angel turn and the obstacle set after that turn's Devil move. This is the geometric no-return obligation underlying the escape argument; it does not assume non-repetition or escape.",
+      "created_at": "2026-10-18T14:13:50.772574+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_WallWalk",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303; author manuscript pp. 6-8, octagonal wall-following rule, Claim 3.1 analogue, Proposition 4.3 and Theorem 4.5. Two wall transitions per turn give an admissible power-two implementation; no-return is the remaining geometric obligation.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "778bd072-6fcb-407d-85d0-a013477fb67c",
+      "theorem_name": "AngelDevil_WallWalk",
+      "theorem_title": "Octagonal boundary walk and the power-two wall strategy",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "A directed wall is an occupied integer square with an outward side direction. The tangent points counterclockwise from the outward normal. To advance, first test the occupied square's tangent neighbor: if empty, turn around the same square, even when the diagonal square is occupied. Otherwise test the diagonal square: if empty, continue straight; if occupied, turn around the concave corner. Obstacles consist of all squares with negative first coordinate together with the recorded Devil choices. Starting with the east side of square (-1,0), the strategy performs exactly two wall transitions after each Devil move and lands in the outside square. Its state is reconstructed from the chronological burn history. The wall trace records individual transitions, using the same obstacle set for both transitions of a round.",
+      "created_at": "2026-10-18T14:12:52.670777+00:00",
+      "vote_count": 0,
+      "definition": "import Definitions.Def_AngelDevil_SquareBoundary\n\nnamespace AngelDevil\n\nabbrev Wall := Point \u00d7 SquareSide\n\n/-- Counterclockwise rotation of the outward normal: occupied squares are left. -/\ndef tangentSide (d : SquareSide) : SquareSide :=\n  (!d.1, if d.1 then !d.2 else d.2)\n\ndef wallOutside (w : Wall) : Point := sideNeighbor w.1 w.2\n\ndef IsBoundaryWall (B : Set Point) (w : Wall) : Prop :=\n  w.1 \u2208 B \u2227 wallOutside w \u2209 B\n\n/-- The corner rule for shrunken blocks. An empty side-neighbor takes\npriority over a diagonally touching block, so the walker passes through the gap. -/\nnoncomputable def nextWall (B : Set Point) (w : Wall) : Wall := by\n  classical\n  let t := tangentSide w.2\n  let a := sideNeighbor w.1 t\n  let b := sideNeighbor a w.2\n  exact if a \u2209 B then (w.1, t)\n    else if b \u2209 B then (a, w.2)\n    else (b, oppositeSide t)\n\nnoncomputable def previousWall (B : Set Point) (w : Wall) : Wall := by\n  classical\n  let t := oppositeSide (tangentSide w.2)\n  let a := sideNeighbor w.1 t\n  let b := sideNeighbor a w.2\n  exact if a \u2209 B then (w.1, t)\n    else if b \u2209 B then (a, w.2)\n    else (b, oppositeSide t)\n\ndef initialWall : Wall := ((-1, 0), (false, false))\n\ndef wallObstacles (burned : List (Option Point)) : Set Point :=\n  {v | v.1 < 0 \u2228 some v \u2208 burned}\n\n/-- Two wall transitions per turn fit inside the power-two movement box. -/\nnoncomputable def wallHistory (burned : List (Option Point)) : Wall :=\n  if _h : burned = [] then initialWall else\n  let w := wallHistory burned.dropLast\n  nextWall (wallObstacles burned) (nextWall (wallObstacles burned) w)\ntermination_by burned.length\ndecreasing_by\n  have hp := List.length_pos_iff.mpr _h\n  simp only [List.length_dropLast]\n  omega\n\nnoncomputable def wallAngel : AngelStrategy :=\n  fun _ burned => wallOutside (wallHistory burned)\n\ndef traceObstacles (D : DevilStrategy) (i : Nat) : Set Point :=\n  wallObstacles (play wallAngel D (i / 2 + 1)).burned\n\nnoncomputable def wallTrace (D : DevilStrategy) : Nat \u2192 Wall\n  | 0 => initialWall\n  | i+1 => nextWall (traceObstacles D i) (wallTrace D i)\n\nend AngelDevil\n",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303; author manuscript pp. 6-8, octagonal wall-following rule, Claim 3.1 analogue, Proposition 4.3 and Theorem 4.5. Two wall transitions per turn give an admissible power-two implementation; no-return is the remaining geometric obligation.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "7f9bf1fe-1d1f-4577-abc5-4386445c58ca",
+      "theorem_name": "AngelDevil_ReducedJourney",
+      "theorem_title": "Earliest-predecessor reduction of finite Angel journeys",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "A total recursive implementation of the reduced journey in Mathe Section 2, equation (1). At each endpoint it chooses the earliest reachable predecessor in the original prefix, recursively reduces that prefix, and appends the endpoint. Empty and malformed histories have explicit fallback cases; proved correctness for valid journeys is a separate theorem.",
+      "created_at": "2026-10-18T12:57:20.329816+00:00",
+      "vote_count": 0,
+      "definition": "import Definitions.Def_AngelDevil_Game\n\nnamespace AngelDevil\n\ninstance jumpDecidable (p : Nat) (u v : Point) : Decidable (Jump p u v) := by\n  unfold Jump\n  infer_instance\n\ndef firstReachable (p : Nat) (h : List Point) (z : Point) : Nat :=\n  h.findIdx (fun v => decide (Jump p v z))\n\n/- Section 2, equation (1). The recursive predecessor is the earliest point in\nthe ORIGINAL prefix that can reach the endpoint, not an arbitrary loop erasure.\nThe singleton fallback only specifies a total function on malformed journeys.\n-/\ndef reducedJourney (p : Nat) (h : List Point) : List Point :=\n  if _hnil : h = [] then [] else\n  let z := h.getLastD origin\n  if z = origin then [origin] else\n  let prior := h.dropLast\n  let i := firstReachable p prior z\n  if i < prior.length then\n    reducedJourney p (prior.take (i+1)) ++ [z]\n  else [z]\ntermination_by h.length\ndecreasing_by\n  have hpos : 0 < h.length := List.length_pos_iff.mpr _hnil\n  simp only [List.length_take, List.length_dropLast]\n  omega\n\nend AngelDevil\n\n",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 3, equation (1).",
+      "tags": [
+        "angel-problem",
+        "combinatorics"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+      "theorem_name": "AngelDevil.power_two_beats_nice_devil",
+      "theorem_title": "Theorem 4.5: power two escapes every Nice Devil",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.power_two_beats_nice_devil : AngelDevil.NiceAngelWins 2 := by sorry",
+      "natural_language_statement": "There exists one power-two Angel strategy that survives against every Nice Devil and, against each such opponent, reaches outside every finite box centred at the origin.",
+      "created_at": "2026-10-18T12:47:30.798633+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_Game",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Theorem 4.5, manuscript p. 8.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [
+        {
+          "audit_id": "aa55776b-f1dc-424a-8f32-5a108dc5c55e",
+          "reviewer_id": "136472b2-7660-4cad-97ab-bc0d424d2ccd",
+          "reviewer_username": "Shuze Chen",
+          "decision": "confirm",
+          "comment": "Confirmed by the moderator at approval.",
+          "created_at": "2026-10-18T19:50:16.327743+00:00"
+        },
+        {
+          "audit_id": "12a17f5f-ef7f-4958-a47b-e03947f1d340",
+          "reviewer_id": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+          "reviewer_username": "Yuxuan Xu",
+          "decision": "confirm",
+          "comment": "Confirmed by the mission captain (proposal self-audit).",
+          "created_at": "2026-10-18T19:50:16.664164+00:00"
+        }
+      ],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "theorem_name": "AngelDevil_Game",
+      "theorem_title": "Angel and Devil: infinite-board game and strategies",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "Integer lattice game with Devil-first rounds, passing, history-dependent strategies, legal survival, Nice Devil restrictions, unbounded escape, and confinement of every finite safe prefix. Conventions follow Sections 1-2, Definitions 2.2, 2.3, 2.5 and equation (2).",
+      "created_at": "2026-10-18T12:47:14.248414+00:00",
+      "vote_count": 0,
+      "definition": "import Std\n\n/-! The convention is Mathe's paper: Devil moves first, may pass, and may\neat any square (including the occupied square); only subsequent landing on\nan eaten square loses. Zero-length Angel moves are allowed by Definition 2.5.\nHistories are stored oldest first. Strategies are total also off legal play.\n-/\nnamespace AngelDevil\n\nabbrev Point := Int \u00d7 Int\ndef origin : Point := (0, 0)\n\ndef Jump (p : Nat) (u v : Point) : Prop :=\n  -(p : Int) \u2264 v.1 - u.1 \u2227 v.1 - u.1 \u2264 (p : Int) \u2227\n  -(p : Int) \u2264 v.2 - u.2 \u2227 v.2 - u.2 \u2264 (p : Int)\n\ndef InBox (N : Nat) (v : Point) : Prop := Jump N origin v\n\ndef Journey (p : Nat) (h : List Point) : Prop :=\n  h.head? = some origin \u2227\n  \u2200 (i : Nat) (u v : Point), h[i]? = some u \u2192 h[i+1]? = some v \u2192 Jump p u v\n\nabbrev DevilStrategy := List Point \u2192 Option Point\nabbrev AngelStrategy := List Point \u2192 List (Option Point) \u2192 Point\n\nstructure State where\n  visited : List Point\n  burned : List (Option Point)\n\ndef initial : State := \u27e8[origin], []\u27e9\ndef current (s : State) : Point := s.visited.getLastD origin\ndef step (A : AngelStrategy) (D : DevilStrategy) (s : State) : State :=\n  let burned := s.burned ++ [D s.visited]\n  \u27e8s.visited ++ [A s.visited burned], burned\u27e9\n\ndef play (A : AngelStrategy) (D : DevilStrategy) : Nat \u2192 State\n  | 0 => initial\n  | n+1 => step A D (play A D n)\n\ndef Survives (p : Nat) (A : AngelStrategy) (D : DevilStrategy) : Prop :=\n  \u2200 n, Jump p (current (play A D n)) (current (play A D (n+1))) \u2227\n    some (current (play A D (n+1))) \u2209 (play A D (n+1)).burned\n\ndef AngelWins (p : Nat) : Prop := \u2203 A, \u2200 D, Survives p A D\n\n/- Definition 2.2, as made explicit by equation (2): the origin and every\nsquare reachable from a position before the last one are protected. -/\ndef Nice (p : Nat) (D : DevilStrategy) : Prop :=\n  \u2200 h, Journey p h \u2192 \u2200 z, D h = some z \u2192\n    z \u2260 origin \u2227 \u2200 v \u2208 h.dropLast, \u00ac Jump p v z\n\ndef Escapes (A : AngelStrategy) (D : DevilStrategy) : Prop :=\n  \u2200 N : Nat, \u2203 n : Nat, \u00ac InBox N (current (play A D n))\n\ndef NiceAngelWins (p : Nat) : Prop :=\n  \u2203 A, \u2200 D, Nice p D \u2192 Survives p A D \u2227 Escapes A D\n\ndef NiceCanConfine (p N : Nat) : Prop :=\n  \u2203 D, Nice p D \u2227 \u2200 A n,\n    (\u2200 m, m < n \u2192\n      Jump p (current (play A D m)) (current (play A D (m+1))) \u2227\n      some (current (play A D (m+1))) \u2209 (play A D (m+1)).burned) \u2192\n    InBox N (current (play A D n))\n\nend AngelDevil\n",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Sections 1-2, manuscript pp. 1-3.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [
+        {
+          "audit_id": "48ccd7f5-6450-4714-9854-ff9edbb7915f",
+          "reviewer_id": "136472b2-7660-4cad-97ab-bc0d424d2ccd",
+          "reviewer_username": "Shuze Chen",
+          "decision": "confirm",
+          "comment": "Confirmed by the moderator at approval.",
+          "created_at": "2026-10-18T19:50:16.327743+00:00"
+        },
+        {
+          "audit_id": "caeb021b-79a9-429c-8520-eecb41fd3473",
+          "reviewer_id": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+          "reviewer_username": "Yuxuan Xu",
+          "decision": "confirm",
+          "comment": "Confirmed by the mission captain (proposal self-audit).",
+          "created_at": "2026-10-18T19:50:16.664164+00:00"
+        }
+      ],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "9b05ab5a-6341-49a0-8b72-335a6682a388",
+      "theorem_name": "AngelDevil_FiniteHorizon",
+      "theorem_title": "Finite-horizon safety and bounded Angel moves",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "Safety for n rounds requires every one of the first n jumps to be legal and to avoid all squares selected so far. Finite-horizon winning means one Angel strategy is safe for that horizon against every Devil. Strategy inputs are visited and burned histories. Legal displacements are encoded by pairs of integers from 0 through 2p, translated by minus p in each coordinate. The encoding retains legal choices and replaces illegal choices by staying put.",
+      "created_at": "2026-10-18T13:36:05.422047+00:00",
+      "vote_count": 0,
+      "definition": "import Definitions.Def_AngelDevil_Game\n\nnamespace AngelDevil\n\ndef SafeFor (p : Nat) (A : AngelStrategy) (D : DevilStrategy) (n : Nat) : Prop :=\n  \u2200 m, m < n \u2192\n    Jump p (current (play A D m)) (current (play A D (m+1))) \u2227\n    some (current (play A D (m+1))) \u2209 (play A D (m+1)).burned\n\ndef FiniteAngelWins (p n : Nat) : Prop := \u2203 A, \u2200 D, SafeFor p A D n\n\nabbrev Observation := List Point \u00d7 List (Option Point)\nabbrev BoundedMove (p : Nat) := Fin (2*p+1) \u00d7 Fin (2*p+1)\n\ndef decodeMove (p : Nat) (h : List Point) (d : BoundedMove p) : Point :=\n  ((h.getLastD origin).1 + (d.1.val : Int) - (p : Int),\n   (h.getLastD origin).2 + (d.2.val : Int) - (p : Int))\n\ndef boundedAngel (p : Nat) (f : Observation \u2192 BoundedMove p) : AngelStrategy :=\n  fun h b => decodeMove p h (f (h, b))\n\n/- Invalid off-path choices are replaced by staying put. Legal choices are\nencoded exactly, so this changes no safe finite play. -/\nnoncomputable def encodeAngel (p : Nat) (A : AngelStrategy) :\n    Observation \u2192 BoundedMove p := by\n  classical\n  intro o\n  let v := A o.1 o.2\n  let u := o.1.getLastD origin\n  exact if hv : Jump p u v then\n    (\u27e8(v.1-u.1+(p : Int)).toNat, by unfold Jump at hv; omega\u27e9,\n     \u27e8(v.2-u.2+(p : Int)).toNat, by unfold Jump at hv; omega\u27e9)\n  else (\u27e8p, by omega\u27e9, \u27e8p, by omega\u27e9)\n\nend AngelDevil\n",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript pp. 1-2: determinacy observation and Claim 2.1; auxiliary formalization definitions.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "9ce68653-543f-4f54-ad03-38a632ec30d1",
+      "theorem_name": "AngelDevil.finite_survival_compactness",
+      "theorem_title": "Finite-horizon survival yields an infinite winning strategy",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.finite_survival_compactness (p : Nat)\n    (hf : \u2200 n, FiniteAngelWins p n) : AngelWins p := by sorry",
+      "natural_language_statement": "For any nonnegative integer power, suppose that for every finite number n of rounds there exists an Angel strategy that remains safe for n rounds against every Devil. Then a single Angel strategy remains safe forever against every Devil. The finite strategies may depend on n; the conclusion uses one strategy for all rounds.",
+      "created_at": "2026-10-18T13:36:53.692206+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_FiniteHorizon\nopen AngelDevil",
+      "source": "Mathe, The Angel of power 2 wins (2007), https://doi.org/10.1017/S0963548306008303, author manuscript p. 2, Claim 2.1 proof: the suitable limit of finite-horizon strategies.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+      "theorem_name": "AngelDevil.reducedJourney_allowed",
+      "theorem_title": "Claim 2.6: allowed journeys remain allowed after reduction",
+      "status": "Proved",
+      "formal_statement": "theorem AngelDevil.reducedJourney_allowed (p : Nat) (D : DevilStrategy) (h : List Point)\n    (ha : Allowed p (niceReduction p D) h) : Allowed p D (reducedJourney p h)  := by sorry",
+      "natural_language_statement": "For every nonnegative integer power, every Devil strategy and every finite journey allowed against its Nice transformation, the reduced journey is allowed against the original Devil. Allowedness includes both bounded jumps and avoidance of all earlier Devil selections. The statement also covers power zero.",
+      "created_at": "2026-10-18T13:16:24.741931+00:00",
+      "vote_count": 0,
+      "preamble": "import Definitions.Def_AngelDevil_NiceReduction\nopen AngelDevil",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Claim 2.6, p. 3.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "theorem",
+      "theorem_id": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "theorem_name": "AngelDevil_NiceReduction",
+      "theorem_title": "Nice Devil transformation and allowed finite journeys",
+      "status": "Definition",
+      "formal_statement": "",
+      "natural_language_statement": "For a finite history, a square is eligible for a Nice Devil precisely when it is not the origin and is outside the power-p neighbourhood of every position except the last. The transformed Devil applies the original Devil to the reduced history, and retains its selected square exactly when eligible; otherwise it passes. An allowed journey starts at the origin, has legal jumps, and never lands on any square selected by the Devil at an earlier prefix, including the selection immediately before landing.",
+      "created_at": "2026-10-18T13:15:55.582059+00:00",
+      "vote_count": 0,
+      "definition": "import Definitions.Def_AngelDevil_ReducedJourney\n\nnamespace AngelDevil\n\n/- Equation (2): protect the origin and the neighbourhood of every position\nstrictly before the current one. The Devil may still eat the current position\nwhen it is not protected by an earlier position. -/\ndef NiceEligible (p : Nat) (h : List Point) (z : Point) : Prop :=\n  z \u2260 origin \u2227 \u2200 v \u2208 h.dropLast, \u00ac Jump p v z\n\ninstance niceEligibleDecidable (p : Nat) (h : List Point) (z : Point) :\n    Decidable (NiceEligible p h z) := by\n  unfold NiceEligible\n  infer_instance\n\ndef niceReduction (p : Nat) (D : DevilStrategy) : DevilStrategy := fun h =>\n  match D (reducedJourney p h) with\n  | none => none\n  | some z => if NiceEligible p h z then some z else none\n\n/- An allowed finite journey: the Devil acts on prefix i before landing j,\nso all pairs i < j must be checked, not only consecutive moves. -/\ndef Allowed (p : Nat) (D : DevilStrategy) (h : List Point) : Prop :=\n  Journey p h \u2227 \u2200 (i j : Nat) (z : Point), i < j \u2192 h[j]? = some z \u2192\n    D (h.take (i+1)) \u2260 some z\n\nend AngelDevil\n",
+      "source": "Andras Mathe, The Angel of power 2 wins, CPC 16 (2007), 363-374; https://doi.org/10.1017/S0963548306008303; author manuscript internal pagination. Definition 2.5 and following discussion, p. 2; equation (2), p. 3.",
+      "tags": [
+        "angel-problem",
+        "combinatorics",
+        "game-theory"
+      ],
+      "audits": [],
+      "created_by": "418b0711-62a5-416a-ba5d-876ae8758fe3",
+      "created_by_username": "Yuxuan Xu",
+      "deprecated_at": null,
+      "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "env_display_name": "Mathlib 0df444a (Lean v4.33.1)",
+      "has_more_children": false,
+      "has_more_parents": false
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "submission_id": "42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "parent_theorem_id": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "This proves the confinement transfer of Mathe's Theorem 2.4, also allowing zero\npower or zero box radius. It uses Claim 2.6 as a published theorem dependency.\n\nFirst, any allowed finite history can be realized by a scripted Angel strategy.\nConversely, every safe prefix of strategy play is an allowed history. This proves\nequivalence of history-based confinement and the finite-safe-prefix confinement\nused by the mission. Apply the original confinement hypothesis to the reduced\nhistory, which is allowed by Claim 2.6. The reduction preserves its endpoint.\nEquation (2) gives a Nice Devil, so its finite safe plays stay in the same box.\n\nNo determinacy or existence of a uniform confinement box is asserted here.\nThose remain separate obligations for Theorem 2.7.\n",
+      "created_at": "2026-10-18T13:18:23.91702+00:00",
+      "child_count": 2,
+      "deprecated_at": null
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-52287fc3-ae4a-4382-a8cb-380bb94d7fd3",
+      "submission_id": "52287fc3-ae4a-4382-a8cb-380bb94d7fd3",
+      "parent_theorem_id": "775a4edf-d28a-4a62-89b2-2c5de5c2feaf",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "We prove the stronger invariant that the initial vertex of every positive-index\nwall has strictly positive second coordinate. Suppose instead that index j is\nthe first nonpositive vertex. The first segment points north from the origin,\nso j is greater than one. The incoming wall must point downwards: its occupied\nsquare is (x,0), its outward normal is west, and its outside square has first\ncoordinate x-1. Since the negative half-plane is pre-eaten, x is at least one.\n\nFreeze after the Devil move used by the last segment, at round\nt = floor((j-1)/2)+1. Choose N above all wall supports in this finite prefix.\nDelete negative-height obstacles and replace the pre-eaten half-plane by the\nfinite column (-1,0), ..., (-1,N-1). Keep all recorded eaten squares in the\nnonnegative quadrant. The remaining set has at most N+t members. For every\ntransition strictly before the incoming wall, the two tested cells have first\ncoordinate at least -1 and nonnegative height below N. Their membership is\nunchanged by truncation. Nice protection preserves the old outside squares\nwhen the obstacle set is frozen. Thus the finite static walk reproduces the\nentire prefix through the incoming wall. At the contact vertex it next turns\neast along the bottom of square (x,0), reaching (x+1,0).\n\nOn a finite obstacle set, the wall successor is injective on boundary walls:\nthe explicit predecessor is a left inverse. Consequently its orbit is a\ncycle. This octagonal corner convention keeps every occupied support in one\nside-connected component; at a concave turn, the intermediate occupied square\nsupplies the two-edge connection. Apply the imported, proved Claim 4.2 to this\ncomponent. A simple cycle has no more walls than its component's perimeter,\nso some positive return length L satisfies L <= 2(N+t)+2. This argument does\nnot assume that the entire obstacle set is connected.\n\nThe initial cycle must contain the north-facing top wall of the retained\ncolumn. Indeed, following that wall turns onto the column's west side, walks\ndown it, and turns along the bottom wall back to the initial wall; injectivity\non the finite cycle forces the top wall to lie on the initial orbit. Its start\nvertex is (0,N), and it cannot occur in the prefix, whose vertices are all\nbelow N. Immediately after painting that top wall, the vertex is (-1,N).\n\nThe potential y-x increases by at most one on any unit directed wall. Between\n(x+1,0) and (0,N), at least N+x+1 walls are therefore needed. The potential x-y\nlikewise shows that at least N+1 walls are needed from (-1,N) to the origin.\nIncluding the east wall after first contact and the west wall at the column\ntop gives L >= j+2N+x+4 >= j+2N+5. Since j >= 2t-1, this contradicts the upper\nbound. Strong induction rules out every first contact. A return to the initial\nwall would have start vertex (0,0), so no positive-index return is possible.\n\nAll truncation, cycle, component, column, and potential estimates are proved\nin the submitted file. The sole imported theorem is connectedSquares_perimeter\n(Claim 4.2); it is actually used in the cycle upper bound. The original\nwallTrace_never_returns statement and original game definitions are unchanged.\n",
+      "created_at": "2026-10-18T14:37:27.949487+00:00",
+      "child_count": 2,
+      "deprecated_at": null
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-9650a163-653b-4113-bb8b-d051cf03f583",
+      "submission_id": "9650a163-653b-4113-bb8b-d051cf03f583",
+      "parent_theorem_id": "76719177-828c-4447-b573-06ec5a9f0684",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "Theorem 2.7 follows from a uniform confinement box for an unrestricted Devil\n(Claim 2.1 plus the introductory determinacy observation) and the confinement\ntransfer of Theorem 2.4. The latter is proved; the former remains an open target.\nThis submission is a genuine dependency decomposition, not a completed proof\nof Theorem 2.7 while uniform confinement remains open.\n",
+      "created_at": "2026-10-18T13:18:39.36848+00:00",
+      "child_count": 2,
+      "deprecated_at": null
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-97eeb292-fd7e-40ce-9b4b-c045518e225a",
+      "submission_id": "97eeb292-fd7e-40ce-9b4b-c045518e225a",
+      "parent_theorem_id": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "This proves Mathe's Claim 2.6 using the equation (2) transformation.\n\nInduct along the recursive earliest-predecessor construction. Every nonempty\nprefix of a reduced journey is the reduction of some original prefix. If the\nlast vertex is not the origin, every original position strictly before its\nearliest predecessor is too far away to protect that last vertex under the\nNice filter. A Devil selection of this last vertex on any reduced prefix would\ntherefore also be made by the transformed Devil on the corresponding original\nprefix, contradicting allowedness. Earlier reduced landings are handled by the\ninduction hypothesis. Origin-ending histories reduce to a singleton.\n\nThe submitted proof imports and uses the published preservation-of-Journey\ntheorem `09953273-0806-4e9f-a1da-0b10a2292ffb`. The closed local proof also builds\nindependently without importing any open platform theorem placeholders.\n",
+      "created_at": "2026-10-18T13:16:52.667424+00:00",
+      "child_count": 2,
+      "deprecated_at": null
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-a7e909c2-b877-43ef-86cf-e400407b697f",
+      "submission_id": "a7e909c2-b877-43ef-86cf-e400407b697f",
+      "parent_theorem_id": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "Assuming the two paper milestones, the Angel of power two has a winning strategy.\nThe child statements are open obligations, not conclusions established by this\nsubmission.\n\nSuppose there were no winning power-two Angel strategy. Theorem 2.7, in the\nformulation that includes the introduction's determinacy observation, supplies a\npositive radius and a Nice Devil that confines every finite safe play to that box.\nTheorem 4.5 supplies a single Angel strategy that survives and escapes every box\nagainst every Nice Devil. Apply this strategy to the confining Nice Devil.\n\nIts infinite survival makes each finite prefix safe. Its escape property supplies\na round outside the confining box, while the confinement property places that same\nround inside the box. This contradiction proves the main conclusion conditional\non the two imported milestones. This is the last deduction on manuscript page 8,\nafter Theorem 4.5.\n",
+      "created_at": "2026-10-18T12:50:32.286675+00:00",
+      "child_count": 2,
+      "deprecated_at": null
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-b8f1dd37-d9a2-4dec-8cd8-df14d87cadd5",
+      "submission_id": "b8f1dd37-d9a2-4dec-8cd8-df14d87cadd5",
+      "parent_theorem_id": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "The original NiceAngelWins 2 target follows from the proved conditional implication niceAngelWins_of_wall_no_return and the explicit geometric child wallTrace_never_returns. The implication supplies one concrete power-two strategy, survival, the first-repeat argument, and finite-box escape. The no-return child remains open; this is a reduction, not a completed proof of the Nice Angel theorem.\n",
+      "created_at": "2026-10-18T14:15:14.111302+00:00",
+      "child_count": 2,
+      "deprecated_at": null
+    },
+    {
+      "node_type": "sketch",
+      "node_id": "sketch-e9b369e4-3a61-4f2c-b56b-9dcfcc9f18c0",
+      "submission_id": "e9b369e4-3a61-4f2c-b56b-9dcfcc9f18c0",
+      "parent_theorem_id": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
+      "status": "ACCEPTED",
+      "username": "Yuxuan Xu",
+      "explanation": "This proves the original uniform-confinement target, combining the introductory\ndeterminacy observation and Claim 2.1. If the Angel has no infinite winning\nstrategy, finite-survival compactness gives a finite horizon with no universally\nsafe Angel strategy. Finite-game determinacy then gives one Devil forcing\nfailure by that horizon T.\n\nA safe n-round play moves at most np in each coordinate. Under this Devil, any\nsafe prefix must have n < T, so all safe prefixes lie in the positive-radius box\nB(Tp+1). The proof imports and uses the independently verified compactness and\nfinite-determinacy statements, and keeps the original theorem's quantifiers.\n",
+      "created_at": "2026-10-18T13:38:32.684841+00:00",
+      "child_count": 2,
+      "deprecated_at": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "76719177-828c-4447-b573-06ec5a9f0684",
+      "target": "sketch-a7e909c2-b877-43ef-86cf-e400407b697f",
+      "kind": "sketch"
+    },
+    {
+      "source": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+      "target": "sketch-a7e909c2-b877-43ef-86cf-e400407b697f",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-a7e909c2-b877-43ef-86cf-e400407b697f",
+      "target": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+      "kind": "sketch"
+    },
+    {
+      "source": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
+      "target": "sketch-9650a163-653b-4113-bb8b-d051cf03f583",
+      "kind": "sketch"
+    },
+    {
+      "source": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+      "target": "sketch-9650a163-653b-4113-bb8b-d051cf03f583",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-9650a163-653b-4113-bb8b-d051cf03f583",
+      "target": "76719177-828c-4447-b573-06ec5a9f0684",
+      "kind": "sketch"
+    },
+    {
+      "source": "3ec0f8c7-bca2-454f-9f1f-e43728a98359",
+      "target": "sketch-b8f1dd37-d9a2-4dec-8cd8-df14d87cadd5",
+      "kind": "sketch"
+    },
+    {
+      "source": "775a4edf-d28a-4a62-89b2-2c5de5c2feaf",
+      "target": "sketch-b8f1dd37-d9a2-4dec-8cd8-df14d87cadd5",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-b8f1dd37-d9a2-4dec-8cd8-df14d87cadd5",
+      "target": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+      "kind": "sketch"
+    },
+    {
+      "source": "755f9736-9c48-4e56-a844-ee7810ff855b",
+      "target": "sketch-e9b369e4-3a61-4f2c-b56b-9dcfcc9f18c0",
+      "kind": "sketch"
+    },
+    {
+      "source": "9ce68653-543f-4f54-ad03-38a632ec30d1",
+      "target": "sketch-e9b369e4-3a61-4f2c-b56b-9dcfcc9f18c0",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-e9b369e4-3a61-4f2c-b56b-9dcfcc9f18c0",
+      "target": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
+      "kind": "sketch"
+    },
+    {
+      "source": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+      "target": "sketch-42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "kind": "sketch"
+    },
+    {
+      "source": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "target": "sketch-42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-42cf9ad1-e809-4fe5-8895-07f5d7aa31c4",
+      "target": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+      "kind": "sketch"
+    },
+    {
+      "source": "595569d4-9682-4a6c-9967-8e47f242c4c0",
+      "target": "sketch-52287fc3-ae4a-4382-a8cb-380bb94d7fd3",
+      "kind": "sketch"
+    },
+    {
+      "source": "778bd072-6fcb-407d-85d0-a013477fb67c",
+      "target": "sketch-52287fc3-ae4a-4382-a8cb-380bb94d7fd3",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-52287fc3-ae4a-4382-a8cb-380bb94d7fd3",
+      "target": "775a4edf-d28a-4a62-89b2-2c5de5c2feaf",
+      "kind": "sketch"
+    },
+    {
+      "source": "09953273-0806-4e9f-a1da-0b10a2292ffb",
+      "target": "sketch-97eeb292-fd7e-40ce-9b4b-c045518e225a",
+      "kind": "sketch"
+    },
+    {
+      "source": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "target": "sketch-97eeb292-fd7e-40ce-9b4b-c045518e225a",
+      "kind": "sketch"
+    },
+    {
+      "source": "sketch-97eeb292-fd7e-40ce-9b4b-c045518e225a",
+      "target": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+      "kind": "sketch"
+    },
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "6204cf5d-3e21-4e77-91ee-856e578b4253",
+      "kind": "structural"
+    },
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "76719177-828c-4447-b573-06ec5a9f0684",
+      "kind": "structural"
+    },
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "880e0f8b-5ca9-4de7-965e-33979f37fbaf",
+      "kind": "structural"
+    },
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "2202ef8d-e4d0-4b0b-81af-3c0549e73536",
+      "kind": "structural"
+    },
+    {
+      "source": "778bd072-6fcb-407d-85d0-a013477fb67c",
+      "target": "3ec0f8c7-bca2-454f-9f1f-e43728a98359",
+      "kind": "structural"
+    },
+    {
+      "source": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "target": "573ba228-d8a4-41f7-ab55-9aad2fd7f68d",
+      "kind": "structural"
+    },
+    {
+      "source": "778bd072-6fcb-407d-85d0-a013477fb67c",
+      "target": "775a4edf-d28a-4a62-89b2-2c5de5c2feaf",
+      "kind": "structural"
+    },
+    {
+      "source": "4391822a-6fe3-4195-bbb4-f998a5562061",
+      "target": "595569d4-9682-4a6c-9967-8e47f242c4c0",
+      "kind": "structural"
+    },
+    {
+      "source": "9b05ab5a-6341-49a0-8b72-335a6682a388",
+      "target": "755f9736-9c48-4e56-a844-ee7810ff855b",
+      "kind": "structural"
+    },
+    {
+      "source": "4391822a-6fe3-4195-bbb4-f998a5562061",
+      "target": "778bd072-6fcb-407d-85d0-a013477fb67c",
+      "kind": "structural"
+    },
+    {
+      "source": "9b05ab5a-6341-49a0-8b72-335a6682a388",
+      "target": "9ce68653-543f-4f54-ad03-38a632ec30d1",
+      "kind": "structural"
+    },
+    {
+      "source": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "target": "b6f4b8fc-c1fe-4fc7-a690-ba558187e1e5",
+      "kind": "structural"
+    },
+    {
+      "source": "7f9bf1fe-1d1f-4577-abc5-4386445c58ca",
+      "target": "c56b8f68-ce47-4000-86d9-66bc21fc0bcf",
+      "kind": "structural"
+    },
+    {
+      "source": "7f9bf1fe-1d1f-4577-abc5-4386445c58ca",
+      "target": "09953273-0806-4e9f-a1da-0b10a2292ffb",
+      "kind": "structural"
+    },
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "4391822a-6fe3-4195-bbb4-f998a5562061",
+      "kind": "structural"
+    },
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "7f9bf1fe-1d1f-4577-abc5-4386445c58ca",
+      "kind": "structural"
+    },
+    {
+      "source": "90fbf190-12a8-4c28-b928-2e095a71ed60",
+      "target": "9b05ab5a-6341-49a0-8b72-335a6682a388",
+      "kind": "structural"
+    }
+  ],
+  "has_hidden_deprecated": false,
+  "has_hidden_deprecated_sketches": false,
+  "depth": 10
+}

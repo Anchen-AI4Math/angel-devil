@@ -1,0 +1,15 @@
+platform/classification/box.lean:51:24: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+platform/classification/box.lean:72:31: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+platform/classification/box.lean:86:23: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+platform/classification/box.lean:162:2: warning: Unused tactic linter: `change
+  kingWallPoint s x ∈
+    (List.range 7).flatMap
+      (fun (k : Nat) => [kingWallPoint s (-100 + (k : Int)), kingWallPoint s (100 - (k : Int))])` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

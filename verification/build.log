@@ -1,1 +1,22 @@
-Build completed successfully (913 jobs).
+✔ [923/928] Built Definitions.Def_AngelDevil_KingGuard (12s)
+⚠ [924/928] Built Solutions.KingGuard (12s)
+warning: Solutions/KingGuard.lean:57:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Solutions/KingGuard.lean:78:31: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Solutions/KingGuard.lean:92:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [925/928] Built Solutions.KingGuardCertificate (16s)
+⚠ [926/928] Built Solutions.KingBox (15s)
+warning: Solutions/KingBox.lean:79:2: Unused tactic linter: `change
+  kingWallPoint s x ∈
+    (List.range 7).flatMap
+      (fun (k : Nat) => [kingWallPoint s (-100 + (k : Int)), kingWallPoint s (100 - (k : Int))])` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [927/928] Built Solutions.KingCapture (14s)
+✔ [928/928] Built Solutions.PowerClassification (13s)
+Build completed successfully (928 jobs).
