@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this Lean formalization, please cite the archived source snapshot and credit the mathematical sources listed in NOTICE."
+title: "Angel–Devil: complete integer-power classification in Lean"
+type: software
+authors:
+  - family-names: Xu
+    given-names: Yuxuan
+    orcid: "https://orcid.org/0009-0001-8760-5277"
+doi: "10.5281/zenodo.24597331"
+version: "44c797f"
+date-released: 2026-10-19
+repository-code: "https://github.com/Anchen-AI4Math/angel-devil"
+url: "https://doi.org/10.5281/zenodo.24597331"
+license: Apache-2.0

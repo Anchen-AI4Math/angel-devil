@@ -1,0 +1,11 @@
+Angel–Devil: complete integer-power classification in Lean
+Copyright 2026 Yuxuan Xu (徐宇轩), for his original implementation.
+
+Original implementation by Yuxuan Xu is distributed under Apache-2.0.
+Third-party work retains its existing authorship and terms. The project
+formalizes known mathematical results. It uses the king-capture argument
+of Elwyn Berlekamp as presented by Martin Kutz (2004), §1.1, and András
+Máthé, The Angel of power 2 wins (2007), DOI 10.1017/S0963548306008303.
+The paper and thesis are cited, not distributed. See papers/*.json.
+Lean and Mathlib are separately obtained dependencies and are not bundled.
+The formalization and its checks were developed with AI assistance.
